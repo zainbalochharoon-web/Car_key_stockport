@@ -29,8 +29,8 @@ export default function ContactPage() {
                 <Phone className="w-6 h-6 text-orange-400 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Phone</h3>
-                  <a href="tel:+44161234567" className="text-orange-400 hover:underline text-lg">
-                    0161 234 567
+                  <a href="tel:+44 7936 755530" className="text-orange-400 hover:underline text-lg">
+                    +44 7936 755530
                   </a>
                   <p className="text-gray-300 text-sm">24/7 Emergency Service</p>
                 </div>
