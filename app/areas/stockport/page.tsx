@@ -6,7 +6,7 @@ import { Phone, MapPin, Clock, Star } from "lucide-react"
 export const metadata: Metadata = {
   title: "Car Key Replacement Stockport | Local Mobile Locksmith Service",
   description:
-    "Professional car key replacement service in Stockport, Greater Manchester. 24/7 mobile locksmith covering all Stockport areas. Call 0161 234 567",
+    "Professional car key replacement service in Stockport, Greater Manchester. 24/7 mobile locksmith covering all Stockport areas. Call +44 7936 755530",
 }
 
 export default function StockportAreaPage() {
