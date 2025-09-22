@@ -44,7 +44,7 @@ export default function StockportAreaPage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href="tel:+44161234567" className="btn-primary text-center">
                   <Phone className="w-5 h-5 inline mr-2" />
-                  Call: 0161 234 567
+                  Call:+44 7936 755530
                 </a>
                 <Link href="/contact" className="btn-secondary text-center">
                   Get Free Quote
