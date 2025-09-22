@@ -5,7 +5,7 @@ import ContactForm from "./contact-form"
 export const metadata: Metadata = {
   title: "Contact Us - Car Keys Stockport | Get Free Quote",
   description:
-    "Contact Car Keys Stockport for fast car key replacement, programming and lockout assistance. Call 0161 234 567 or get a free quote online.",
+    "Contact Car Keys Stockport for fast car key replacement, programming and lockout assistance. Call +44 7936 755530 or get a free quote online.",
 }
 
 export default function ContactPage() {
