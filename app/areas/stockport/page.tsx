@@ -42,7 +42,7 @@ export default function StockportAreaPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="tel:+44161234567" className="btn-primary text-center">
+                <a href="tel:+44 7936 755530" className="btn-primary text-center">
                   <Phone className="w-5 h-5 inline mr-2" />
                   Call:+44 7936 755530
                 </a>
