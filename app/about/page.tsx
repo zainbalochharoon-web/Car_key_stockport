@@ -62,9 +62,9 @@ export default function AboutPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+44161234567" className="btn-primary text-center">
+                <a href="tel:+44 7936 755530" className="btn-primary text-center">
                   <Phone className="w-5 h-5 inline mr-2" />
-                  Call: 0161 234 567
+                  Call: +44 7936 755530
                 </a>
                 <Link href="/contact" className="btn-secondary text-center">
                   Get Free Quote
@@ -551,11 +551,11 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+44161234567"
+              href="tel:+44 7936 755530"
               className="bg-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-primary/90 transition-colors"
             >
               <Phone className="w-5 h-5 inline mr-2" />
-              Call: 0161 234 567
+              Call: +44 7936 755530
             </a>
             <a
               href="/contact"
