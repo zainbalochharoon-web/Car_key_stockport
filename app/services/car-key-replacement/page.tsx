@@ -6,7 +6,7 @@ import { Phone, Clock, Shield, CheckCircle, Star } from "lucide-react"
 export const metadata: Metadata = {
   title: "Car Key Replacement Stockport | Fast Mobile Service from £89",
   description:
-    "Professional car key replacement in Stockport. Cut and programmed on-site for all makes. 30min response, fully insured. Call 0161 234 567",
+    "Professional car key replacement in Stockport. Cut and programmed on-site for all makes. 30min response, fully insured. Call +44 7936 755530",
 }
 
 export default function CarKeyReplacementPage() {
@@ -24,9 +24,9 @@ export default function CarKeyReplacementPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="tel:+44161234567" className="btn-primary text-center">
+                <a href="tel:+44 7936 755530" className="btn-primary text-center">
                   <Phone className="w-5 h-5 inline mr-2" />
-                  Call: 0161 234 567
+                  Call: +44 7936 755530
                 </a>
                 <Link href="/contact" className="btn-secondary text-center">
                   Get Free Quote
