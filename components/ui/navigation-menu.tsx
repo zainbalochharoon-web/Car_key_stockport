@@ -160,7 +160,7 @@ export {
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuContent,
-  NavigationMenuTrigger,
+ 
   NavigationMenuLink,
   NavigationMenuIndicator,
   NavigationMenuViewport,
