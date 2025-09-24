@@ -173,8 +173,8 @@ export default function ContactPage() {
                 icon: <Phone className="w-8 h-8 text-orange-400" />,
                 title: "Call Direct",
                 description: "Instant response for emergencies",
-                action: "0161 234 567",
-                link: "tel:+44161234567",
+                action: "07309903243",
+                link: "tel:+07309903243",
               },
               {
                 icon: <MessageCircle className="w-8 h-8 text-blue-400" />,
