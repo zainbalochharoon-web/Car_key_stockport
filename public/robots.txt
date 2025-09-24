@@ -1,18 +1,4 @@
 User-agent: *
-Allow: /
+Disallow:
 
-# Sitemap
 Sitemap: https://carkeysinstockport.co.uk/sitemap.xml
-
-# Block admin or backend
-Disallow: /admin/
-Disallow: /api/
-
-# Important pages explicitly allowed (matching sitemap)
-Allow: /
-Allow: /services
-Allow: /services/car-key-replacement
-Allow: /services/key-fob-programming
-Allow: /areas/stockport
-Allow: /about
-Allow: /contact
