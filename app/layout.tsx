@@ -61,9 +61,9 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* Sticky Call Bar - Mobile */}
         <div className="fixed bottom-0 left-0 right-0 bg-blue-600 text-white p-4 z-50 md:hidden">
-          <a href="tel:+44161234567" className="flex items-center justify-center gap-2 font-bold text-lg">
+          <a href="tel:07309903243" className="flex items-center justify-center gap-2 font-bold text-lg">
             <Phone className="w-5 h-5" />
-            Call Now: 0161 234 567
+            Call Now: 07309903243
           </a>
         </div>
 
@@ -95,9 +95,9 @@ export default function RootLayout({
                 </Link>
               </nav>
 
-              <a href="tel:+44161234567" className="btn-primary hidden md:flex items-center gap-2">
+              <a href="tel: 07309903243" className="btn-primary hidden md:flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                0161 234 567
+               07309903243
               </a>
             </div>
           </div>
@@ -212,8 +212,8 @@ export default function RootLayout({
                 <div className="space-y-2 text-gray-400 mb-6">
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-orange-400" />
-                    <a href="tel:+44161234567" className="hover:text-orange-400 transition-colors text-sm">
-                      0161 234 567
+                    <a href="tel:07309903243" className="hover:text-orange-400 transition-colors text-sm">
+                     07309903243
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
@@ -291,7 +291,7 @@ export default function RootLayout({
               "@type": "AutomotiveBusiness",
               name: "Car Keys in Stockport",
               url: "https://carkeysinstockport.co.uk",
-              telephone: "+44161234567",
+              telephone: "07309903243",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "123 High Street",
@@ -314,7 +314,7 @@ export default function RootLayout({
                   name: "Stockport",
                 },
                 {
-                  "@type": "City",
+                  "@type": "City",070730990324307309903243309903243
                   name: "Cheadle",
                 },
                 {
