@@ -41,9 +41,9 @@ export default function KeyFobProgrammingPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="tel:+44161234567" className="btn-primary text-center">
+                <a href="tel:07309903243" className="btn-primary text-center">
                   <Phone className="w-5 h-5 inline mr-2" />
-                  Call: 0161 234 567
+                  Call: 07309903243
                 </a>
                 <Link href="/contact" className="btn-secondary text-center">
                   Get Free Quote
@@ -228,10 +228,10 @@ export default function KeyFobProgrammingPage() {
                 <h3 className="text-xl font-bold mb-4">Need a Key Fob Programmed Now?</h3>
                 <p className="mb-4">Call our 24/7 emergency line for immediate assistance.</p>
                 <a
-                  href="tel:+44161234567"
+                  href="tel: 07309903243 "
                   className="bg-white text-black px-6 py-3 rounded-xl font-bold block text-center hover:bg-gray-100 transition-colors"
                 >
-                  0161 234 567
+                  07309903243
                 </a>
               </div>
 
@@ -309,11 +309,11 @@ export default function KeyFobProgrammingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+44161234567"
+              href="tel: 07309903243"
               className="bg-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-primary/90 transition-colors"
             >
               <Phone className="w-5 h-5 inline mr-2" />
-              Call: 0161 234 567
+              Call: 07309903243
             </a>
             <Link
               href="/contact"
@@ -338,7 +338,7 @@ export default function KeyFobProgrammingPage() {
             provider: {
               "@type": "AutomotiveBusiness",
               name: "Car Keys Stockport",
-              telephone: "+44161234567",
+              telephone: "07309903243",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "123 High Street",
