@@ -29,8 +29,8 @@ export default function ContactPage() {
                 <Phone className="w-6 h-6 text-orange-400 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Phone</h3>
-                  <a href="tel:+44 7936 755530" className="text-orange-400 hover:underline text-lg">
-                    +44 7936 755530
+                  <a href="tel:07309903243" className="text-orange-400 hover:underline text-lg">
+                    07309903243
                   </a>
                   <p className="text-gray-300 text-sm">24/7 Emergency Service</p>
                 </div>
@@ -181,7 +181,7 @@ export default function ContactPage() {
                 title: "WhatsApp",
                 description: "Quick messages and photos",
                 action: "Message Us",
-                link: "https://wa.me/44161234567",
+                link: "https://wa.me/07309903243",
               },
               {
                 icon: <Mail className="w-8 h-8 text-green-400" />,
@@ -219,14 +219,14 @@ export default function ContactPage() {
             <p className="text-red-100 mb-6">Don't panic - we're here to help 24/7</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+44161234567"
+                href="tel:07309903243"
                 className="bg-white text-red-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-colors"
               >
                 <Phone className="w-5 h-5 inline mr-2" />
-                Emergency: 0161 234 567
+                Emergency: 07309903243
               </a>
               <a
-                href="https://wa.me/44161234567"
+                href="https://wa.me/07309903243"
                 className="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-red-600 transition-colors"
               >
                 WhatsApp Us
