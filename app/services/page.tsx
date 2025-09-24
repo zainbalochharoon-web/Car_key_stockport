@@ -96,8 +96,8 @@ export default function ServicesPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="tel:+44161234567" className="btn-primary text-center">
-                  <Phone className="w-5 h-5 inline mr-2" /> Call Now: 0161 234 567
+                <a href="tel: 07309903243 " className="btn-primary text-center">
+                  <Phone className="w-5 h-5 inline mr-2" /> Call Now: 07309903243
                 </a>
                 <Link href="/contact" className="btn-secondary text-center">
                   Get Free Quote <ArrowRight className="w-4 h-4 inline ml-2" />
@@ -476,10 +476,10 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+44161234567"
+              href="tel:07309903243 "
               className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-100 transition-colors"
             >
-              Call: 0161 234 567
+              Call: 07309903243
             </a>
             <Link
               href="/contact"
