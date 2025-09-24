@@ -1,8 +1,19 @@
-import type React from "react"
+// app/layout.tsx or app/layout.jsx (if you're using Next.js App Router)
+
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Link from "next/link"
-import { Phone, Key, Facebook, Instagram, Twitter, Linkedin, MapPin, Clock } from "lucide-react" // Added social icons
+import {
+  Phone,
+  Key,
+  Facebook,
+  Instagram,
+  Twitter,
+  Linkedin,
+  MapPin,
+  Clock,
+} from "lucide-react"
+
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -15,7 +26,14 @@ export const metadata: Metadata = {
   },
   description:
     "24/7 car key replacement, programming and lockout assistance in Stockport. Fast response, insurance-approved, mobile service. Call now!",
-  keywords: ["car key replacement", "Stockport", "auto locksmith", "car keys", "key programming", "lockout service"],
+  keywords: [
+    "car key replacement",
+    "Stockport",
+    "auto locksmith",
+    "car keys",
+    "key programming",
+    "lockout service",
+  ],
   authors: [{ name: "Car Keys in Stockport" }],
   creator: "Car Keys in Stockport",
   publisher: "Car Keys in Stockport",
@@ -48,7 +66,7 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -61,7 +79,10 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* Sticky Call Bar - Mobile */}
         <div className="fixed bottom-0 left-0 right-0 bg-blue-600 text-white p-4 z-50 md:hidden">
-          <a href="tel:07309903243" className="flex items-center justify-center gap-2 font-bold text-lg">
+          <a
+            href="tel:07309903243"
+            className="flex items-center justify-center gap-2 font-bold text-lg"
+          >
             <Phone className="w-5 h-5" />
             Call Now: 07309903243
           </a>
@@ -74,30 +95,47 @@ export default function RootLayout({
               <Link href="/" className="flex items-center gap-2 text-white">
                 <Key className="w-6 h-6 text-orange-400" />
                 <span className="text-xl font-bold">Car Keys</span>
-                <span className="text-xl font-semibold text-gray-300">Stockport</span>
+                <span className="text-xl font-semibold text-gray-300">
+                  Stockport
+                </span>
               </Link>
 
               <nav className="hidden md:flex items-center space-x-8">
-                <Link href="/" className="text-white hover:text-orange-400 transition-colors">
+                <Link href="/" className="text-white hover:text-orange-400">
                   Home
                 </Link>
-                <Link href="/services" className="text-white hover:text-orange-400 transition-colors">
+                <Link
+                  href="/services"
+                  className="text-white hover:text-orange-400"
+                >
                   Services
                 </Link>
-                <Link href="/areas/stockport" className="text-white hover:text-orange-400 transition-colors">
+                <Link
+                  href="/areas/stockport"
+                  className="text-white hover:text-orange-400"
+                >
                   Areas
                 </Link>
-                <Link href="/about" className="text-white hover:text-orange-400 transition-colors">
+                <Link
+                  href="/about"
+                  className="text-white hover:text-orange-400"
+                >
                   About
                 </Link>
-                <Link href="/contact" className="text-white hover:text-orange-400 transition-colors">
+                <Link
+                  href="/contact"
+                  className="text-white hover:text-orange-400"
+                >
                   Contact
                 </Link>
               </nav>
 
-              <a href="tel: 07309903243" className="btn-primary hidden md:flex items-center gap-2">
+              <a
+                href="tel:07309903243"
+                className="btn-primary hidden md:flex items-center gap-2"
+              >
                 <Phone className="w-4 h-4" />
-               07309903243
+                07309903243
               </a>
             </div>
           </div>
@@ -114,7 +152,9 @@ export default function RootLayout({
                 <Link href="/" className="flex items-center gap-2 text-white mb-4">
                   <Key className="w-7 h-7 text-orange-400" />
                   <span className="text-2xl font-bold">Car Keys</span>
-                  <span className="text-2xl font-semibold text-gray-300">Stockport</span>
+                  <span className="text-2xl font-semibold text-gray-300">
+                    Stockport
+                  </span>
                 </Link>
                 <p className="text-gray-400 mb-4 text-sm leading-relaxed">
                   Your trusted 24/7 automotive locksmith in Stockport and Greater Manchester. Fast, reliable, and
@@ -213,7 +253,7 @@ export default function RootLayout({
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-orange-400" />
                     <a href="tel:07309903243" className="hover:text-orange-400 transition-colors text-sm">
-                     07309903243
+                      07309903243
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
@@ -283,6 +323,7 @@ export default function RootLayout({
           </div>
         </footer>
 
+        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -302,19 +343,20 @@ export default function RootLayout({
               },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: "53.4106",
-                longitude: "-2.1575",
+                latitude: 53.4106,
+                longitude: -2.1575,
               },
               openingHours: "Mo-Su 00:00-23:59",
               priceRange: "££",
-              description: "24/7 car key replacement, programming and lockout assistance in Stockport",
+              description:
+                "24/7 car key replacement, programming and lockout assistance in Stockport",
               areaServed: [
                 {
                   "@type": "City",
                   name: "Stockport",
                 },
                 {
-                  "@type": "City",070730990324307309903243309903243
+                  "@type": "City",
                   name: "Cheadle",
                 },
                 {
