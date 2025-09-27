@@ -1,4 +1,4 @@
-```tsx
+
 // app/layout.tsx or app/layout.jsx (if you're using Next.js App Router)
 
 import type { Metadata } from "next"
@@ -406,4 +406,4 @@ export default function RootLayout({
     </html>
   )
 }
-```
+
