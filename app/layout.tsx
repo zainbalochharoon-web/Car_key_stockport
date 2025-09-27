@@ -1,5 +1,5 @@
 
-// app/layout.tsx or app/layout.jsx (if you're using Next.js App Router)
+// app/layout.tsx
 
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -39,11 +39,14 @@ export const metadata: Metadata = {
   creator: "Car Keys in Stockport",
   publisher: "Car Keys in Stockport",
 
-  // ✅ Added favicon
+  // ✅ Favicon setup
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" }, // Standard ICO
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" }, // PNG 32x32
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" }, // Apple devices
+    shortcut: "/favicon.ico",
   },
 
   robots: {
@@ -360,18 +363,9 @@ export default function RootLayout({
               description:
                 "24/7 car key replacement, programming and lockout assistance in Stockport",
               areaServed: [
-                {
-                  "@type": "City",
-                  name: "Stockport",
-                },
-                {
-                  "@type": "City",
-                  name: "Cheadle",
-                },
-                {
-                  "@type": "City",
-                  name: "Bramhall",
-                },
+                { "@type": "City", name: "Stockport" },
+                { "@type": "City", name: "Cheadle" },
+                { "@type": "City", name: "Bramhall" },
               ],
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
@@ -406,4 +400,3 @@ export default function RootLayout({
     </html>
   )
 }
-
