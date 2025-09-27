@@ -1,3 +1,4 @@
+```tsx
 // app/layout.tsx or app/layout.jsx (if you're using Next.js App Router)
 
 import type { Metadata } from "next"
@@ -37,6 +38,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Car Keys in Stockport" }],
   creator: "Car Keys in Stockport",
   publisher: "Car Keys in Stockport",
+
+  // ✅ Added favicon
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -397,3 +406,4 @@ export default function RootLayout({
     </html>
   )
 }
+```
