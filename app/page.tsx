@@ -250,7 +250,7 @@ export default function HomePage() {
                     href={service.link}
                     className="text-orange-400 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
                   >
-                    Learn More <ArrowRight className="w-4 h-4" />
+                    Learn More About {service.title} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               ))}

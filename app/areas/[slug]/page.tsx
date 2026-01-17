@@ -339,7 +339,7 @@ export default function LocationPage({ params }: LocationPageProps) {
                   ].map((service) => (
                     <li key={service.name}>
                       <Link href={service.href} className="text-orange-400 hover:text-orange-300 text-sm">
-                        → {service.name}
+                        {service.name} Service
                       </Link>
                     </li>
                   ))}

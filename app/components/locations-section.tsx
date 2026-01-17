@@ -122,7 +122,7 @@ export default function LocationsSection() {
 
                 {/* Call to Action */}
                 <div className="flex items-center gap-2 text-orange-400 font-semibold text-sm group-hover:gap-3 transition-all">
-                  <span>Learn More</span>
+                  <span>Learn More About {location.name} Services</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
