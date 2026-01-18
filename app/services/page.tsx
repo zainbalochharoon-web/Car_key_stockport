@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Car Locksmith Services Stockport | Auto Locksmith Near Me | Professional Mobile Service",
   description:
     "Professional car locksmith services in Stockport - auto locksmith near me, mobile locksmith, car key replacement near me. 24/7 emergency service.",
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/services",
+  },
 }
 
 export default function ServicesPage() {
@@ -75,54 +78,53 @@ export default function ServicesPage() {
   return (
     <main className="bg-slate-900 text-white pt-20">
       {/* Header / Hero */}
-      <section className="section-padding pt-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <section className="section-padding pt-20 sm:pt-24 md:pt-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             {/* Left: Content */}
             <div>
-              <div className="flex items-center gap-2 text-orange-400 mb-4">
-                <Zap className="w-5 h-5" />
-                <span className="font-semibold">24/7 Mobile Car Locksmith</span>
+              <div className="flex items-center gap-2 text-orange-400 mb-3 sm:mb-4">
+                <Zap className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
+                <span className="font-semibold text-sm sm:text-base">24/7 Mobile Car Locksmith</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
                 Car Locksmith & Auto Locksmith in <span className="text-orange-400">Stockport</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
                 Fast, professional help for car key replacement, key fob programming, and vehicle lockouts. Average
                 <span className="text-orange-400"> 30-minute response</span>. Your trusted "car locksmith near me" across
                 Stockport and Greater Manchester.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="tel: 07309903243 " className="btn-primary text-center">
-                  <Phone className="w-5 h-5 inline mr-2" /> Call Now: 07309903243
-                </a>
-                <Link href="/contact" className="btn-secondary text-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <a href="tel: 07309903243 " className="btn-primary text-center w-full sm:w-auto">
+                  <Phone className="w-4 sm:w-5 h-4 sm:h-5 inline mr-2 flex-shrink-0" /> Call Now: 07309903243</a>
+                <Link href="/contact" className="btn-secondary text-center w-full sm:w-auto">
                   Get Free Quote <ArrowRight className="w-4 h-4 inline ml-2" />
                 </Link>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                <div className="flex items-center gap-2 bg-slate-800/60 p-3 rounded-lg border border-slate-700">
-              <Clock className="w-5 h-5 text-orange-400" />
-                  <span className="text-sm">30min Response</span>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
+                <div className="flex items-center gap-2 bg-slate-800/60 p-2 sm:p-3 rounded-lg border border-slate-700 text-xs sm:text-sm">
+              <Clock className="w-4 sm:w-5 h-4 sm:h-5 text-orange-400 flex-shrink-0" />
+                  <span>30min Response</span>
                 </div>
-                <div className="flex items-center gap-2 bg-slate-800/60 p-3 rounded-lg border border-slate-700">
-                  <Shield className="w-5 h-5 text-green-400" />
-                  <span className="text-sm">Fully Insured</span>
+                <div className="flex items-center gap-2 bg-slate-800/60 p-2 sm:p-3 rounded-lg border border-slate-700 text-xs sm:text-sm">
+                  <Shield className="w-4 sm:w-5 h-4 sm:h-5 text-green-400 flex-shrink-0" />
+                  <span>Fully Insured</span>
                 </div>
-                <div className="flex items-center gap-2 bg-slate-800/60 p-3 rounded-lg border border-slate-700">
-                  <CheckCircle className="w-5 h-5 text-blue-400" />
-                  <span className="text-sm">Fixed Pricing</span>
+                <div className="flex items-center gap-2 bg-slate-800/60 p-2 sm:p-3 rounded-lg border border-slate-700 text-xs sm:text-sm">
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-blue-400 flex-shrink-0" />
+                  <span>Fixed Pricing</span>
                 </div>
               </div>
             </div>
 
             {/* Right: Visual with Remote Key Fobs */}
             <div className="relative">
-              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden border-2 border-orange-400/30">
+              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden border-2 border-orange-400/30">
                 <Image
                   src="/real-car-keys.jpg"
                   alt="Remote key fobs and car locksmith services in Stockport - auto locksmith near me"
@@ -133,10 +135,10 @@ export default function ServicesPage() {
               </div>
 
               {/* Floating rating badge */}
-              <div className="absolute -bottom-5 -left-5 bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-lg">
+              <div className="absolute -bottom-5 -left-5 bg-slate-800 p-3 sm:p-4 rounded-xl border border-slate-700 shadow-lg" aria-label="5-star rated local locksmith service">
                 <div className="flex items-center gap-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-3 sm:w-4 h-3 sm:h-4 text-yellow-400 fill-current" aria-hidden="true" />
                   ))}
                 </div>
                 <div className="text-xs text-gray-300 mt-2">5-Star Rated Local Service</div>
@@ -149,42 +151,42 @@ export default function ServicesPage() {
       {/* Service Categories */}
       <section className="section-padding bg-slate-800">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Car Locksmith Service Categories</h2>
-            <p className="text-gray-300">Choose the auto locksmith service category that matches your needs for quick assistance. Professional car locksmith near me.</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Car Locksmith Service Categories</h2>
+            <p className="text-sm sm:text-base text-gray-300 px-2 sm:px-0">Choose the auto locksmith service category that matches your needs for quick assistance. Professional car locksmith near me.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mb-8 sm:mb-12">
             {[
               {
-                icon: <Zap className="w-8 h-8 text-red-400" />,
+                icon: <Zap className="w-6 sm:w-8 h-6 sm:h-8 text-red-400" />,
                 title: "Emergency",
                 description: "Urgent lockout & key issues",
                 count: "2 services",
               },
               {
-                icon: <PenTool className="w-8 h-8 text-blue-400" />,
+                icon: <PenTool className="w-6 sm:w-8 h-6 sm:h-8 text-blue-400" />,
                 title: "Replacement",
                 description: "New keys & programming",
                 count: "3 services",
               },
               {
-                icon: <Award className="w-8 h-8 text-green-400" />,
+                icon: <Award className="w-6 sm:w-8 h-6 sm:h-8 text-green-400" />,
                 title: "Repair",
                 description: "Fix existing systems",
                 count: "2 services",
               },
               {
-                icon: <Star className="w-8 h-8 text-yellow-400" />,
+                icon: <Star className="w-6 sm:w-8 h-6 sm:h-8 text-yellow-400" />,
                 title: "Premium",
                 description: "High-end vehicle services",
                 count: "All services",
               },
             ].map((category, index) => (
-              <div key={index} className="card text-center hover:scale-105 transition-transform duration-300">
-                <div className="flex justify-center mb-4">{category.icon}</div>
-                <h3 className="font-bold mb-2">{category.title}</h3>
-                <p className="text-gray-300 text-sm mb-2">{category.description}</p>
+              <div key={index} className="card text-center hover:scale-105 transition-transform duration-300 p-3 sm:p-6">
+                <div className="flex justify-center mb-3 sm:mb-4">{category.icon}</div>
+                <h3 className="font-bold mb-2 text-sm sm:text-base">{category.title}</h3>
+                <p className="text-gray-300 text-xs sm:text-sm mb-2">{category.description}</p>
                 <p className="text-orange-400 text-xs">{category.count}</p>
               </div>
             ))}
@@ -195,7 +197,7 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-8">
             {services.map((service, index) => (
               <div
                 key={index}

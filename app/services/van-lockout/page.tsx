@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description:
     "Van locked out? Emergency van lockout assistance in Stockport, 24/7. Fast damage-free entry for all van types. 25-minute response. Fully insured. Call 07309903243",
   keywords: "van lockout, locked out of van, van locksmith Stockport, emergency van service",
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/services/van-lockout",
+  },
 }
 
 export default function VanLockoutPage() {
@@ -54,10 +57,10 @@ export default function VanLockoutPage() {
             </div>
 
             <div className="relative">
-              <div className="relative h-96 rounded-2xl overflow-hidden border-2 border-orange-400/30">
+              <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden border-2 border-orange-400/30">
                 <Image
                   src="/images/van-lockout.jpg"
-                  alt="Emergency van lockout service in Stockport"
+                  alt="Professional emergency van lockout service in Stockport with fast response"
                   fill
                   className="object-cover"
                   priority

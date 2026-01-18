@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <main className="bg-slate-900 text-white pt-20">
       {/* Hero Section */}
-      <section className="section-padding pt-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      <section className="section-padding pt-20 sm:pt-28 md:pt-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-20 w-40 h-40 bg-gradient-to-r from-orange-400 to-red-400 rounded-full blur-3xl"></div>
@@ -22,58 +22,58 @@ export default function AboutPage() {
         </div>
 
         <div className="container-custom relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="animate-fade-in">
-              <div className="flex items-center gap-2 text-orange-400 mb-4">
-                <Award className="w-5 h-5" />
-                <span className="font-semibold">Professional Automotive Locksmiths</span>
+              <div className="flex items-center gap-2 text-orange-400 mb-3 sm:mb-4">
+                <Award className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
+                <span className="font-semibold text-sm sm:text-base">Professional Automotive Locksmiths</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
                 About{" "}
                 <span className="text-transparent bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text">
                   Car Keys Stockport
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
                 Professional automotive locksmiths serving Stockport and Greater Manchester since 2016. We're your
                 trusted local experts for all car key services, available 24/7. Our commitment is to provide fast,
                 reliable, and affordable solutions.
               </p>
 
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="text-center bg-gradient-to-br from-orange-500/20 to-red-500/20 p-4 rounded-xl border border-orange-400/30">
-                  <div className="text-3xl font-bold text-orange-400 mb-2">8+</div>
-                  <div className="text-sm text-gray-300">Years Experience</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-6 sm:mb-8">
+                <div className="text-center bg-gradient-to-br from-orange-500/20 to-red-500/20 p-3 sm:p-4 rounded-xl border border-orange-400/30">
+                  <div className="text-2xl sm:text-3xl font-bold text-orange-400 mb-2">8+</div>
+                  <div className="text-xs sm:text-sm text-gray-300">Years Experience</div>
                 </div>
-                <div className="text-center bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-4 rounded-xl border border-blue-400/30">
-                  <div className="text-3xl font-bold text-blue-400 mb-2">2,500+</div>
-                  <div className="text-sm text-gray-300">Jobs Completed</div>
+                <div className="text-center bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-3 sm:p-4 rounded-xl border border-blue-400/30">
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-2">2,500+</div>
+                  <div className="text-xs sm:text-sm text-gray-300">Jobs Completed</div>
                 </div>
-                <div className="text-center bg-gradient-to-br from-green-500/20 to-blue-500/20 p-4 rounded-xl border border-green-400/30">
-                  <div className="text-3xl font-bold text-green-400 mb-2">98%</div>
-                  <div className="text-sm text-gray-300">Customer Satisfaction</div>
+                <div className="text-center bg-gradient-to-br from-green-500/20 to-blue-500/20 p-3 sm:p-4 rounded-xl border border-green-400/30">
+                  <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-2">98%</div>
+                  <div className="text-xs sm:text-sm text-gray-300">Customer Satisfaction</div>
                 </div>
-                <div className="text-center bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-4 rounded-xl border border-yellow-400/30">
-                  <div className="text-3xl font-bold text-yellow-400 mb-2">24/7</div>
-                  <div className="text-sm text-gray-300">Emergency Service</div>
+                <div className="text-center bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-3 sm:p-4 rounded-xl border border-yellow-400/30">
+                  <div className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-2">24/7</div>
+                  <div className="text-xs sm:text-sm text-gray-300">Emergency Service</div>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel: 07309903243" className="btn-primary text-center">
-                  <Phone className="w-5 h-5 inline mr-2" />
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a href="tel: 07309903243" className="btn-primary text-center w-full sm:w-auto">
+                  <Phone className="w-4 sm:w-5 h-4 sm:h-5 inline mr-2 flex-shrink-0" />
                   Call: 07309903243
                 </a>
-                <Link href="/contact" className="btn-secondary text-center">
+                <Link href="/contact" className="btn-secondary text-center w-full sm:w-auto">
                   Get Free Quote
                 </Link>
               </div>
             </div>
 
-            <div className="relative animate-slide-up">
-              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative animate-slide-up hidden lg:block">
+              <div className="relative h-80 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-400/30 via-red-400/20 to-purple-400/30 z-10"></div>
                 <Image
                   src="/car-locksmith-service.svg"

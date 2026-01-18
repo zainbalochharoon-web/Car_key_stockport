@@ -1,12 +1,27 @@
 // app/services/emergency-service/page.tsx
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Phone, Clock, Shield, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Emergency Car Key Service Stockport | 24/7 Locksmith",
   description: "Fast emergency car key replacement and locksmith service in Stockport. 24/7 mobile service. Call +44 7309 903243.",
+  keywords: "emergency car key service, 24/7 locksmith, emergency lockout, car locksmith stockport",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Emergency Car Key Service Stockport | 24/7 Locksmith",
+    description: "Locked out or lost keys? Fast 24/7 emergency car key service in Stockport. Call 07309903243",
+    url: "https://carkeysinstockport.co.uk/services/emergency-service",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/services/emergency-service",
+  },
 };
 
 export default function EmergencyServicePage() {
@@ -23,37 +38,39 @@ export default function EmergencyServicePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <a href="tel:07309903243" className="btn-primary text-center">
+              <a href="tel:07309903243" className="btn-primary text-center" aria-label="Call emergency locksmith service">
                 <Phone className="w-5 h-5 inline mr-2" />
                 Call Now: 07309903243
               </a>
-              <Link href="/contact" className="btn-secondary text-center">
+              <Link href="/contact" className="btn-secondary text-center" aria-label="Get free quote for emergency service">
                 Get Free Quote
               </Link>
             </div>
 
             <div className="grid grid-cols-3 gap-4 text-center">
               <div className="card">
-                <Clock className="w-6 h-6 text-orange-400 mx-auto mb-2" />
+                <Clock className="w-6 h-6 text-orange-400 mx-auto mb-2" aria-hidden="true" />
                 <div className="text-sm font-semibold">Immediate Response</div>
               </div>
               <div className="card">
-                <Shield className="w-6 h-6 text-orange-400 mx-auto mb-2" />
+                <Shield className="w-6 h-6 text-orange-400 mx-auto mb-2" aria-hidden="true" />
                 <div className="text-sm font-semibold">Fully Insured</div>
               </div>
               <div className="card">
-                <CheckCircle className="w-6 h-6 text-orange-400 mx-auto mb-2" />
+                <CheckCircle className="w-6 h-6 text-orange-400 mx-auto mb-2" aria-hidden="true" />
                 <div className="text-sm font-semibold">Fixed Pricing</div>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="relative h-96 rounded-2xl overflow-hidden">
-              <img
+            <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden">
+              <Image
                 src="/emergency-locksmith.svg"
-                alt="Emergency car key service in Stockport"
-                className="object-cover w-full h-full"
+                alt="Professional emergency car key service available 24/7 in Stockport"
+                fill
+                className="object-cover"
+                priority
               />
             </div>
           </div>

@@ -8,7 +8,30 @@ export const metadata: Metadata = {
   description:
     "Auto locksmith services in Stockport, UK. Local car key replacement, emergency lockout, key fob programming. Available 24/7. Fast 25-minute response. Fully insured. Call 07309903243",
   keywords: "locksmith Stockport, auto locksmith near me, car locksmith Stockport, emergency locksmith",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Auto Locksmith Stockport | Local Car Key & Lockout Service",
+    description: "Fast auto locksmith services in Stockport. Car key replacement, emergency lockout, key fob programming. 24/7 service. Call 07309903243",
+    url: "https://carkeysinstockport.co.uk/areas/stockport",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/areas/stockport",
+  },
 }
+
+const subLocations = [
+  { name: "Manchester", slug: "manchester" },
+  { name: "Bury", slug: "bury" },
+  { name: "Oldham", slug: "oldham" },
+  { name: "Rochdale", slug: "rochdale" },
+  { name: "Tameside", slug: "tameside" },
+  { name: "Trafford", slug: "trafford" },
+  { name: "Salford", slug: "salford" },
+]
 
 export default function StockportAreaPage() {
   return (
@@ -23,9 +46,9 @@ export default function StockportAreaPage() {
 
         <div className="container-custom relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
+            <article className="animate-fade-in">
               <div className="flex items-center gap-2 text-orange-400 mb-4">
-                <MapPin className="w-5 h-5 text-orange-400" />
+                <MapPin className="w-5 h-5 text-orange-400" aria-hidden="true" />
                 <span className="font-semibold">Serving All Stockport Areas 24/7</span>
               </div>
 
@@ -52,18 +75,18 @@ export default function StockportAreaPage() {
 
               <div className="grid grid-cols-2 gap-6 text-sm">
                 <div className="flex items-center gap-2 bg-slate-800/50 p-3 rounded-lg">
-                  <Clock className="w-5 h-5 text-orange-400" />
+                  <Clock className="w-5 h-5 text-orange-400" aria-hidden="true" />
                   <span>Average 25min response in Stockport</span>
                 </div>
                 <div className="flex items-center gap-2 bg-slate-800/50 p-3 rounded-lg">
-                  <Star className="w-5 h-5 text-yellow-400" />
+                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
                   <span>5★ rated local service</span>
                 </div>
               </div>
-            </div>
+            </article>
 
             <div className="relative animate-slide-up">
-              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden border-2 border-gradient-to-r from-orange-400 to-red-400 shadow-2xl">
+              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden border-2 border-gradient-to-r from-orange-400 to-red-400 shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-400/20"></div>
                 <Image
                   src="/car-locksmith-service.svg"
@@ -75,12 +98,12 @@ export default function StockportAreaPage() {
               </div>
 
               {/* Floating Stats */}
-              <div className="absolute -bottom-6 -left-6 bg-slate-800 p-4 rounded-xl border border-orange-400/30 shadow-lg">
+              <div className="absolute -bottom-6 -left-6 hidden md:block bg-slate-800 p-4 rounded-xl border border-orange-400/30 shadow-lg">
                 <div className="text-2xl font-bold text-orange-400">2,500+</div>
                 <div className="text-sm text-gray-300">Keys Replaced</div>
               </div>
 
-              <div className="absolute -top-6 -right-6 bg-slate-800 p-4 rounded-xl border border-blue-400/30 shadow-lg">
+              <div className="absolute -top-6 -right-6 hidden md:block bg-slate-800 p-4 rounded-xl border border-blue-400/30 shadow-lg">
                 <div className="text-2xl font-bold text-blue-400">25min</div>
                 <div className="text-sm text-gray-300">Avg Response</div>
               </div>
@@ -163,6 +186,42 @@ export default function StockportAreaPage() {
         </div>
       </section>
 
+      {/* Greater Manchester Service Areas */}
+      <section className="section-padding bg-slate-800">
+        <div className="container-custom">
+          <h2 className="text-3xl font-bold text-center mb-12">Greater Manchester Service Areas</h2>
+          <p className="text-gray-300 text-center mb-8 max-w-3xl mx-auto">
+            In addition to Stockport, we provide professional auto locksmith services throughout Greater Manchester. Click below to view detailed information for each area.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {subLocations.map((location) => (
+              <Link
+                key={location.slug}
+                href={`/areas/stockport/${location.slug}`}
+                className="group card hover:border-orange-400 hover:bg-slate-700/80 transition-all"
+              >
+                <h3 className="text-xl font-bold mb-3 text-orange-400 group-hover:text-orange-300 transition-colors">
+                  {location.name}
+                </h3>
+                <p className="text-gray-300 text-sm mb-4">
+                  Auto locksmith services available 24/7 with 25-minute response time.
+                </p>
+                <span className="text-orange-400 text-sm font-semibold group-hover:translate-x-1 transition-transform inline-block">
+                  View Details →
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-300 mb-4">
+              Serving all of Greater Manchester and surrounding areas
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Vehicle Compatibility */}
       <section className="section-padding bg-slate-800">
         <div className="container-custom">
@@ -194,45 +253,45 @@ export default function StockportAreaPage() {
       <section className="section-padding bg-slate-800">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12">
-            <div>
+            <article>
               <h2 className="text-3xl font-bold mb-6">Why Choose Our Stockport Service?</h2>
 
               <div className="space-y-6">
-                <div>
+                <section>
                   <h3 className="text-xl font-bold mb-3">Local Knowledge</h3>
                   <p className="text-gray-300">
                     As a local Stockport business, we know the area inside out. We can find you quickly, whether you're
                     stuck in the town centre car parks, at the train station, or in any of the residential areas. Our
                     local expertise ensures faster response times.
                   </p>
-                </div>
+                </section>
 
-                <div>
+                <section>
                   <h3 className="text-xl font-bold mb-3">Fast Response Times</h3>
                   <p className="text-gray-300">
                     Our average response time in Stockport is just 25 minutes. We're strategically located to serve all
                     areas quickly, from Bramhall in the south to Romiley in the east, minimizing your waiting time.
                   </p>
-                </div>
+                </section>
 
-                <div>
+                <section>
                   <h3 className="text-xl font-bold mb-3">Competitive Local Pricing</h3>
                   <p className="text-gray-300">
                     We offer competitive rates specifically for Stockport customers, with no hidden charges or inflated
                     call-out fees. What we quote is what you pay, ensuring transparency and affordability.
                   </p>
-                </div>
+                </section>
 
-                <div>
+                <section>
                   <h3 className="text-xl font-bold mb-3">Community Focused</h3>
                   <p className="text-gray-300">
                     We're proud to serve the Stockport community and have built our reputation on reliable, honest
                     service. Check our Google reviews to see what your neighbors say about our commitment to local
                     service.
                   </p>
-                </div>
+                </section>
               </div>
-            </div>
+            </article>
 
             <div className="space-y-6">
               <div className="card">
@@ -301,10 +360,10 @@ export default function StockportAreaPage() {
                 text: "Needed a replacement key for my Audi. Came to my house in Cheadle, cut and programmed the key perfectly. Highly recommend!",
               },
             ].map((review, index) => (
-              <div key={index} className="card">
+              <article key={index} className="card">
                 <div className="flex mb-4">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-orange-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-orange-400 fill-current" aria-hidden="true" />
                   ))}
                 </div>
                 <p className="text-gray-300 mb-4 italic">"{review.text}"</p>
@@ -312,7 +371,7 @@ export default function StockportAreaPage() {
                   <div className="font-semibold">{review.name}</div>
                   <div className="text-sm text-gray-400">{review.area}</div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

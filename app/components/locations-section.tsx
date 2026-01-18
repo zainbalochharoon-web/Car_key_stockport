@@ -81,32 +81,32 @@ export default function LocationsSection() {
     <section className="section-padding bg-slate-800" id="locations">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <div className="flex items-center justify-center gap-2 text-orange-400 mb-4">
-            <MapPin className="w-5 h-5" />
-            <span className="font-semibold text-sm tracking-wide uppercase">Service Areas</span>
+        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12">
+          <div className="flex items-center justify-center gap-2 text-orange-400 mb-3 sm:mb-4">
+            <MapPin className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
+            <span className="font-semibold text-xs sm:text-sm tracking-wide uppercase">Service Areas</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
             Auto Locksmith Services Across <span className="text-orange-400">Greater Manchester</span>
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-base sm:text-xl text-gray-300 px-2 sm:px-0">
             Professional car key replacement, emergency lockout assistance, and van locksmith services available 24/7
             across Stockport and the wider Greater Manchester area. Wherever you are, we're ready to help.
           </p>
         </div>
 
         {/* Locations Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {locations.map((location) => (
             <Link key={location.slug} href={`/areas/${location.slug}`}>
-              <div className="card p-6 h-full hover:shadow-lg hover:shadow-orange-400/20 transition-all duration-300 cursor-pointer group">
+              <div className="card p-4 sm:p-6 h-full hover:shadow-lg hover:shadow-orange-400/20 transition-all duration-300 cursor-pointer group">
                 {/* Location Name */}
-                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors">
+                <h3 className="text-lg sm:text-2xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors">
                   {location.name}
                 </h3>
 
                 {/* Short Description */}
-                <p className="text-gray-300 text-sm mb-4 leading-relaxed line-clamp-3">
+                <p className="text-gray-300 text-xs sm:text-sm mb-4 leading-relaxed line-clamp-3">
                   {location.description}
                 </p>
 
@@ -114,16 +114,16 @@ export default function LocationsSection() {
                 <div className="space-y-2 mb-6">
                   {location.services.slice(0, 3).map((service) => (
                     <div key={service} className="flex items-center gap-2 text-xs text-gray-400">
-                      <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
+                      <div className="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0"></div>
                       {service}
                     </div>
                   ))}
                 </div>
 
                 {/* Call to Action */}
-                <div className="flex items-center gap-2 text-orange-400 font-semibold text-sm group-hover:gap-3 transition-all">
+                <div className="flex items-center gap-2 text-orange-400 font-semibold text-xs sm:text-sm group-hover:gap-3 transition-all">
                   <span>Learn More About {location.name} Services</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 flex-shrink-0" />
                 </div>
               </div>
             </Link>
@@ -131,10 +131,10 @@ export default function LocationsSection() {
         </div>
 
         {/* Why Choose Us in Your Area */}
-        <div className="max-w-4xl mx-auto bg-gradient-to-r from-orange-600/10 to-red-600/10 border border-orange-400/20 rounded-2xl p-8 md:p-10">
-          <h3 className="text-2xl font-bold mb-6">Why Our Locksmith Service Stands Out in Your Area</h3>
+        <div className="max-w-4xl mx-auto bg-gradient-to-r from-orange-600/10 to-red-600/10 border border-orange-400/20 rounded-2xl p-6 sm:p-8 md:p-10">
+          <h3 className="text-xl sm:text-2xl font-bold mb-6">Why Our Locksmith Service Stands Out in Your Area</h3>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             {[
               {
                 title: "Local Expertise",
@@ -158,25 +158,25 @@ export default function LocationsSection() {
               },
             ].map((item, index) => (
               <div key={index}>
-                <h4 className="font-bold text-lg mb-2">{item.title}</h4>
-                <p className="text-gray-300 text-sm">{item.description}</p>
+                <h4 className="font-bold text-base sm:text-lg mb-2">{item.title}</h4>
+                <p className="text-gray-300 text-xs sm:text-sm">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Final CTA */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-300 text-lg mb-6">
+        <div className="mt-8 sm:mt-12 text-center">
+          <p className="text-gray-300 text-base sm:text-lg mb-4 sm:mb-6 px-2 sm:px-0">
             Don't see your area listed? <span className="text-orange-400 font-semibold">We likely still serve you.</span> Call
             us to confirm coverage.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="tel:07309903243" className="btn-primary inline-flex items-center justify-center gap-2">
-              <Phone className="w-5 h-5" />
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <a href="tel:07309903243" className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+              <Phone className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
               Call: 07309903243
             </a>
-            <Link href="/contact" className="btn-secondary inline-flex items-center justify-center gap-2">
+            <Link href="/contact" className="btn-secondary inline-flex items-center justify-center gap-2 w-full sm:w-auto">
               <span>Get Free Quote</span>
               <ArrowRight className="w-4 h-4" />
             </Link>

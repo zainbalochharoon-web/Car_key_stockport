@@ -9,6 +9,20 @@ export const metadata: Metadata = {
   title: "Remote Key Fob Replacement Stockport | Fast Mobile Service",
   description:
     "Lost or damaged your car remote key fob? Our mobile locksmiths provide fast, professional remote key fob replacement service across Stockport. Call +44 7309 903243",
+  keywords: "remote key fob replacement, key fob repair, lost key fob, car key fob stockport",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Remote Key Fob Replacement Stockport | Fast Mobile Service",
+    description: "Lost your key fob? Fast replacement and programming in Stockport. Call 07309903243",
+    url: "https://carkeysinstockport.co.uk/services/remote-key-fobs",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/services/remote-key-fobs",
+  },
 };
 
 export default function RemoteKeyFobsPage() {
@@ -27,11 +41,11 @@ export default function RemoteKeyFobsPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="tel:07309903243" className="btn-primary text-center">
+                <a href="tel:07309903243" className="btn-primary text-center" aria-label="Call remote key fob service">
                   <Phone className="w-5 h-5 inline mr-2" />
                   Call: 07309903243
                 </a>
-                <Link href="/contact" className="btn-secondary text-center">
+                <Link href="/contact" className="btn-secondary text-center" aria-label="Get free quote for key fob replacement">
                   Get Free Quote
                 </Link>
               </div>
@@ -53,10 +67,10 @@ export default function RemoteKeyFobsPage() {
             </div>
 
             <div className="relative">
-              <div className="relative h-96 rounded-2xl overflow-hidden">
+              <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden">
                 <Image
                   src="/remote-key-fobs.svg"
-                  alt="Remote key fob replacement in Stockport"
+                  alt="Professional remote key fob replacement and programming service in Stockport"
                   fill
                   className="object-cover"
                   priority

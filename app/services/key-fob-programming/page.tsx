@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     "keyless entry car key replacement",
     "automotive key fob programming",
   ],
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/services/key-fob-programming",
+  },
 }
 
 export default function KeyFobProgrammingPage() {
@@ -41,11 +44,11 @@ export default function KeyFobProgrammingPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="tel:07309903243" className="btn-primary text-center">
+                <a href="tel:07309903243" className="btn-primary text-center" aria-label="Call key fob programming service">
                   <Phone className="w-5 h-5 inline mr-2" />
                   Call: 07309903243
                 </a>
-                <Link href="/contact" className="btn-secondary text-center">
+                <Link href="/contact" className="btn-secondary text-center" aria-label="Get free quote for key fob programming">
                   Get Free Quote
                 </Link>
               </div>
@@ -67,10 +70,10 @@ export default function KeyFobProgrammingPage() {
             </div>
 
             <div className="relative">
-              <div className="relative h-96 rounded-2xl overflow-hidden">
+              <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden">
                 <Image
                   src="/remote-key-fobs.svg"
-                  alt="Car key fob programming service in Stockport"
+                  alt="Professional car key fob programming service in Stockport with advanced equipment"
                   fill
                   className="object-cover"
                   priority

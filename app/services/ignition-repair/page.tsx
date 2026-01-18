@@ -9,6 +9,20 @@ export const metadata: Metadata = {
   title: "Ignition Repair Stockport | Fast Mobile Car Locksmith",
   description:
     "Professional ignition repair service in Stockport. Fix broken or faulty ignitions on-site. 30min response, fully insured. Call +44 07309903243",
+  keywords: "ignition repair, ignition switch repair, car ignition problem, locksmith Stockport",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Ignition Repair Stockport | Professional Mobile Service",
+    description: "Fast ignition repair service in Stockport. Broken or faulty ignitions fixed on-site. 30-min response. Call 07309903243",
+    url: "https://carkeysinstockport.co.uk/services/ignition-repair",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/services/ignition-repair",
+  },
 }
 
 export default function IgnitionRepairPage() {
@@ -52,10 +66,10 @@ export default function IgnitionRepairPage() {
             </div>
 
             <div className="relative">
-              <div className="relative h-96 rounded-2xl overflow-hidden">
+              <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden">
                 <Image
                   src="/ignition-repair.svg"
-                  alt="Ignition repair service in Stockport"
+                  alt="Professional ignition repair service with expert technicians in Stockport"
                   fill
                   className="object-cover"
                   priority

@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     description: "Lost your car key? We cut and program new keys on-site. From £89. 25-min response. Call 07309903243",
     url: "https://carkeysinstockport.co.uk/services/car-key-replacement",
   },
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/services/car-key-replacement",
+  },
 }
 
 export default function CarKeyReplacementPage() {
@@ -112,13 +115,14 @@ export default function CarKeyReplacementPage() {
             </div>
 
             <div className="relative">
-              <div className="relative h-96 rounded-2xl overflow-hidden">
+              <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden">
                 <Image
                   src="/car-key-replacement.svg"
-                  alt="Car key replacement service in Stockport"
+                  alt="Professional car key replacement and programming service in Stockport"
                   fill
                   className="object-cover"
                   priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>

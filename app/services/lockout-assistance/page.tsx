@@ -9,6 +9,19 @@ export const metadata: Metadata = {
   title: "Car Lockout Assistance Stockport | Fast Emergency Service",
   description:
     "Locked out of your car in Stockport? Our mobile locksmiths provide fast, professional lockout assistance service. 30min response, fully insured. Call +44 7309 903243",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Car Lockout Assistance Stockport | Fast Emergency Service",
+    description: "Locked out? Fast damage-free lockout assistance in Stockport. 30min response, fully insured. Call 07309903243",
+    url: "https://carkeysinstockport.co.uk/services/lockout-assistance",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/services/lockout-assistance",
+  },
 };
 
 export default function LockoutAssistancePage() {
@@ -39,25 +52,25 @@ export default function LockoutAssistancePage() {
 
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div className="card">
-                  <Clock className="w-6 h-6 text-orange-400 mx-auto mb-2" />
+                  <Clock className="w-6 h-6 text-orange-400 mx-auto mb-2" aria-hidden="true" />
                   <div className="text-sm font-semibold">30min Response</div>
                 </div>
                 <div className="card">
-                  <Shield className="w-6 h-6 text-orange-400 mx-auto mb-2" />
+                  <Shield className="w-6 h-6 text-orange-400 mx-auto mb-2" aria-hidden="true" />
                   <div className="text-sm font-semibold">Fully Insured</div>
                 </div>
                 <div className="card">
-                  <CheckCircle className="w-6 h-6 text-orange-400 mx-auto mb-2" />
+                  <CheckCircle className="w-6 h-6 text-orange-400 mx-auto mb-2" aria-hidden="true" />
                   <div className="text-sm font-semibold">Transparent Pricing</div>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="relative h-96 rounded-2xl overflow-hidden">
+              <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden">
                 <Image
                   src="/lockout-assistance.svg"
-                  alt="Car lockout assistance in Stockport"
+                  alt="Professional car lockout assistance service in Stockport"
                   fill
                   className="object-cover"
                   priority

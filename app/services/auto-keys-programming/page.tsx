@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Auto Keys Programming Stockport | Fast Mobile Service",
   description:
     "Professional auto keys programming service in Stockport. Program car keys, transponders, and remotes on-site. 30min response, fully insured. Call +44 07309903243",
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/services/auto-keys-programming",
+  },
 }
 
 export default function AutoKeysProgrammingPage() {
@@ -37,25 +40,25 @@ export default function AutoKeysProgrammingPage() {
 
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div className="card">
-                  <Clock className="w-6 h-6 text-orange-400 mx-auto mb-2" />
+                  <Clock className="w-6 h-6 text-orange-400 mx-auto mb-2" aria-hidden="true" />
                   <div className="text-sm font-semibold">30min Response</div>
                 </div>
                 <div className="card">
-                  <Shield className="w-6 h-6 text-orange-400 mx-auto mb-2" />
+                  <Shield className="w-6 h-6 text-orange-400 mx-auto mb-2" aria-hidden="true" />
                   <div className="text-sm font-semibold">Fully Insured</div>
                 </div>
                 <div className="card">
-                  <CheckCircle className="w-6 h-6 text-orange-400 mx-auto mb-2" />
+                  <CheckCircle className="w-6 h-6 text-orange-400 mx-auto mb-2" aria-hidden="true" />
                   <div className="text-sm font-semibold">Fixed Pricing</div>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="relative h-96 rounded-2xl overflow-hidden">
+              <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden">
                 <Image
                   src="/auto-keys-programming.svg"
-                  alt="Auto keys programming service in Stockport"
+                  alt="Professional auto keys programming service in Stockport with advanced diagnostic equipment"
                   fill
                   className="object-cover"
                   priority

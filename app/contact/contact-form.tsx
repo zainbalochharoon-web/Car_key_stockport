@@ -84,10 +84,10 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid md:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium mb-2">
+          <label htmlFor="name" className="block text-xs sm:text-sm font-medium mb-2">
             Full Name *
           </label>
           <input
@@ -97,11 +97,11 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-orange-400"
+            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-orange-400 text-sm"
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium mb-2">
+          <label htmlFor="phone" className="block text-xs sm:text-sm font-medium mb-2">
             Phone Number *
           </label>
           <input
@@ -111,13 +111,13 @@ export default function ContactForm() {
             required
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-orange-400"
+            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-orange-400 text-sm"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-2">
+        <label htmlFor="email" className="block text-xs sm:text-sm font-medium mb-2">
           Email Address
         </label>
         <input
@@ -126,12 +126,12 @@ export default function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-orange-400"
+          className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-orange-400 text-sm"
         />
       </div>
 
       <div>
-        <label htmlFor="service" className="block text-sm font-medium mb-2">
+        <label htmlFor="service" className="block text-xs sm:text-sm font-medium mb-2">
           Service Required
         </label>
         <select
@@ -139,7 +139,7 @@ export default function ContactForm() {
           name="service"
           value={formData.service}
           onChange={handleChange}
-          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-orange-400"
+          className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-orange-400 text-sm"
         >
           <option value="">Select a service</option>
           <option value="car-key-replacement">Car Key Replacement</option>
@@ -151,7 +151,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-2">
+        <label htmlFor="message" className="block text-xs sm:text-sm font-medium mb-2">
           Message *
         </label>
         <textarea
@@ -162,14 +162,14 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           placeholder="Please describe your car key problem..."
-          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-orange-400 resize-none"
+          className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-orange-400 resize-none text-sm"
         />
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-all"
       >
         {isSubmitting ? "Sending..." : "Send Message"}
       </button>

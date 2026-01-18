@@ -16,6 +16,7 @@ import {
 } from "lucide-react"
 
 import "./globals.css"
+import MobileNav from "./components/mobile-nav"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -88,55 +89,59 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-GB">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+      </head>
       <body className={inter.className}>
         {/* Sticky Call Bar - Mobile */}
-        <div className="fixed bottom-0 left-0 right-0 bg-blue-600 text-white p-4 z-50 md:hidden">
+        <div className="fixed bottom-0 left-0 right-0 bg-blue-600 text-white p-3 z-50 md:hidden">
           <a
             href="tel:07309903243"
-            className="flex items-center justify-center gap-2 font-bold text-lg"
+            className="flex items-center justify-center gap-2 font-bold text-sm sm:text-base"
           >
-            <Phone className="w-5 h-5" />
-            Call Now: 07309903243
+            <Phone className="w-5 h-5 flex-shrink-0" />
+            <span>Call Now: 07309903243</span>
           </a>
         </div>
 
         {/* Header */}
         <header className="bg-slate-900 backdrop-blur-sm fixed w-full z-40 border-b border-white/10">
           <div className="container-custom">
-            <div className="flex items-center justify-between h-16">
-              <Link href="/" className="flex items-center gap-2 text-white">
-                <Key className="w-6 h-6 text-orange-400" />
-                <span className="text-xl font-bold">Car Keys</span>
-                <span className="text-xl font-semibold text-gray-300">
+            <div className="flex items-center justify-between h-16 gap-4">
+              <Link href="/" className="flex items-center gap-2 text-white flex-shrink-0">
+                <Key className="w-6 h-6 text-orange-400 flex-shrink-0" />
+                <span className="text-lg sm:text-xl font-bold hidden sm:inline">Car Keys</span>
+                <span className="text-lg sm:text-xl font-semibold text-gray-300 hidden sm:inline">
                   Stockport
                 </span>
+                <span className="text-sm sm:hidden font-bold">CK Stockport</span>
               </Link>
 
               <nav className="hidden md:flex items-center space-x-8">
-                <Link href="/" className="text-white hover:text-orange-400">
+                <Link href="/" className="text-white hover:text-orange-400 transition-colors">
                   Home
                 </Link>
                 <Link
                   href="/services"
-                  className="text-white hover:text-orange-400"
+                  className="text-white hover:text-orange-400 transition-colors"
                 >
                   Services
                 </Link>
                 <Link
                   href="/areas/stockport"
-                  className="text-white hover:text-orange-400"
+                  className="text-white hover:text-orange-400 transition-colors"
                 >
                   Areas
                 </Link>
                 <Link
                   href="/about"
-                  className="text-white hover:text-orange-400"
+                  className="text-white hover:text-orange-400 transition-colors"
                 >
                   About
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-white hover:text-orange-400"
+                  className="text-white hover:text-orange-400 transition-colors"
                 >
                   Contact
                 </Link>
@@ -144,11 +149,13 @@ export default function RootLayout({
 
               <a
                 href="tel:07309903243"
-                className="btn-primary hidden md:flex items-center gap-2"
+                className="btn-primary hidden md:flex items-center gap-2 flex-shrink-0"
               >
                 <Phone className="w-4 h-4" />
                 07309903243
               </a>
+
+              <MobileNav />
             </div>
           </div>
         </header>
@@ -156,40 +163,40 @@ export default function RootLayout({
         {children}
 
         {/* Footer */}
-        <footer className="bg-slate-900 border-t border-slate-700">
+        <footer className="bg-slate-900 border-t border-slate-700 pb-16 md:pb-0">
           <div className="container-custom py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Company Info */}
               <div>
                 <Link href="/" className="flex items-center gap-2 text-white mb-4">
-                  <Key className="w-7 h-7 text-orange-400" />
-                  <span className="text-2xl font-bold">Car Keys</span>
-                  <span className="text-2xl font-semibold text-gray-300">
-                    Stockport
+                  <Key className="w-7 h-7 text-orange-400 flex-shrink-0" />
+                  <span>
+                    <span className="text-xl sm:text-2xl font-bold block">Car Keys</span>
+                    <span className="text-lg sm:text-2xl font-semibold text-gray-300">Stockport</span>
                   </span>
                 </Link>
-                <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-400 mb-4 text-xs sm:text-sm leading-relaxed">
                   Your trusted 24/7 automotive locksmith in Stockport and Greater Manchester. Fast, reliable, and
                   professional car key replacement, programming, and lockout assistance.
                 </p>
                 <div className="flex items-center gap-2 text-gray-400 mb-2">
-                  <MapPin className="w-4 h-4 text-orange-400" />
-                  <span className="text-sm">123 High Street, Stockport SK1 1AB</span>
+                  <MapPin className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm">123 High Street, Stockport SK1 1AB</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-400">
-                  <Clock className="w-4 h-4 text-orange-400" />
-                  <span className="text-sm">Open 24/7 for Emergencies</span>
+                  <Clock className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm">Open 24/7 for Emergencies</span>
                 </div>
               </div>
 
               {/* Services */}
               <div>
-                <h4 className="font-bold text-white mb-4 text-lg">Our Services</h4>
+                <h4 className="font-bold text-white mb-4 text-base sm:text-lg">Our Services</h4>
                 <ul className="space-y-2 text-gray-400">
                   <li>
                     <Link
                       href="/services/car-key-replacement"
-                      className="hover:text-orange-400 transition-colors text-sm"
+                      className="hover:text-orange-400 transition-colors text-xs sm:text-sm"
                     >
                       Car Key Replacement
                     </Link>
@@ -197,7 +204,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/services/auto-keys-programming"
-                      className="hover:text-orange-400 transition-colors text-sm"
+                      className="hover:text-orange-400 transition-colors text-xs sm:text-sm"
                     >
                       Key Programming
                     </Link>
@@ -205,20 +212,20 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/services/lockout-assistance"
-                      className="hover:text-orange-400 transition-colors text-sm"
+                      className="hover:text-orange-400 transition-colors text-xs sm:text-sm"
                     >
                       Lockout Assistance
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/ignition-repair" className="hover:text-orange-400 transition-colors text-sm">
+                    <Link href="/services/ignition-repair" className="hover:text-orange-400 transition-colors text-xs sm:text-sm">
                       Ignition Repair
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/services/emergency-service"
-                      className="hover:text-orange-400 transition-colors text-sm"
+                      className="hover:text-orange-400 transition-colors text-xs sm:text-sm"
                     >
                       Emergency Service
                     </Link>
@@ -228,30 +235,30 @@ export default function RootLayout({
 
               {/* Quick Links */}
               <div>
-                <h4 className="font-bold text-white mb-4 text-lg">Quick Links</h4>
+                <h4 className="font-bold text-white mb-4 text-base sm:text-lg">Quick Links</h4>
                 <ul className="space-y-2 text-gray-400">
                   <li>
-                    <Link href="/about" className="hover:text-orange-400 transition-colors text-sm">
+                    <Link href="/about" className="hover:text-orange-400 transition-colors text-xs sm:text-sm">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact" className="hover:text-orange-400 transition-colors text-sm">
+                    <Link href="/contact" className="hover:text-orange-400 transition-colors text-xs sm:text-sm">
                       Get a Free Quote
                     </Link>
                   </li>
                   <li>
-                    <Link href="/areas/stockport" className="hover:text-orange-400 transition-colors text-sm">
+                    <Link href="/areas/stockport" className="hover:text-orange-400 transition-colors text-xs sm:text-sm">
                       Areas We Serve
                     </Link>
                   </li>
                   <li>
-                    <Link href="/testimonials" className="hover:text-orange-400 transition-colors text-sm">
+                    <Link href="/testimonials" className="hover:text-orange-400 transition-colors text-xs sm:text-sm">
                       Customer Reviews
                     </Link>
                   </li>
                   <li>
-                    <Link href="/faq" className="hover:text-orange-400 transition-colors text-sm">
+                    <Link href="/faq" className="hover:text-orange-400 transition-colors text-xs sm:text-sm">
                       FAQs
                     </Link>
                   </li>
@@ -260,31 +267,32 @@ export default function RootLayout({
 
               {/* Contact & Social */}
               <div>
-                <h4 className="font-bold text-white mb-4 text-lg">Contact Us</h4>
+                <h4 className="font-bold text-white mb-4 text-base sm:text-lg">Contact Us</h4>
                 <div className="space-y-2 text-gray-400 mb-6">
                   <div className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-orange-400" />
-                    <a href="tel:07309903243" className="hover:text-orange-400 transition-colors text-sm">
+                    <Phone className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                    <a href="tel:07309903243" className="hover:text-orange-400 transition-colors text-xs sm:text-sm">
                       07309903243
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
                     <Link
                       href="mailto:info@carkeysinstockport.co.uk"
-                      className="hover:text-orange-400 transition-colors text-sm"
+                      className="hover:text-orange-400 transition-colors text-xs sm:text-sm break-all"
                     >
                       info@carkeysinstockport.co.uk
                     </Link>
                   </div>
                 </div>
 
-                <h4 className="font-bold text-white mb-3 text-lg">Follow Us</h4>
+                <h4 className="font-bold text-white mb-3 text-base sm:text-lg">Follow Us</h4>
                 <div className="flex gap-4">
                   <a
                     href="https://www.facebook.com/carkeysinstockport"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-orange-400 transition-colors"
+                    aria-label="Facebook"
                   >
                     <Facebook className="w-6 h-6" />
                   </a>
@@ -293,6 +301,7 @@ export default function RootLayout({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-orange-400 transition-colors"
+                    aria-label="Instagram"
                   >
                     <Instagram className="w-6 h-6" />
                   </a>
@@ -301,6 +310,7 @@ export default function RootLayout({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-orange-400 transition-colors"
+                    aria-label="Twitter"
                   >
                     <Twitter className="w-6 h-6" />
                   </a>
@@ -309,6 +319,7 @@ export default function RootLayout({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-orange-400 transition-colors"
+                    aria-label="LinkedIn"
                   >
                     <Linkedin className="w-6 h-6" />
                   </a>
@@ -316,11 +327,11 @@ export default function RootLayout({
               </div>
             </div>
 
-            <div className="border-t border-slate-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-              <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            <div className="border-t border-slate-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
+              <p className="text-gray-400 text-xs sm:text-sm">
                 © {new Date().getFullYear()} Car Keys Stockport. All rights reserved.
               </p>
-              <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-gray-400 text-sm">
+              <div className="flex flex-wrap justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-gray-400 text-xs sm:text-sm">
                 <Link href="/privacy-policy" className="hover:text-orange-400 transition-colors">
                   Privacy Policy
                 </Link>
