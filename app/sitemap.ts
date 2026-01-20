@@ -4,7 +4,7 @@ import path from "node:path"
 
 import { areaSlugs } from "@/lib/area-locations"
 
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://carkeysinstockport.co.uk").replace(/\/+$/, "")
+const SITE_URL = "https://www.carkeysinstockport.co.uk"
 
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>
 
@@ -39,14 +39,35 @@ function walkPages(appDir: string, dir: string, out: string[]) {
   }
 }
 
+const locationPrefixes = [
+  "/areas/",
+  "/stockport",
+  "/manchester",
+  "/bury",
+  "/salford",
+  "/tameside",
+  "/rochdale",
+  "/oldham",
+  "/gosport",
+  "/hazel-grove",
+  "/bramhall",
+  "/cheadle",
+]
+
+function isServiceOrLocation(urlPath: string) {
+  if (urlPath.startsWith("/services")) return true
+  if (locationPrefixes.some((prefix) => urlPath.startsWith(prefix))) return true
+  return false
+}
+
 function priorityForPath(urlPath: string) {
   if (urlPath === "/") return 1.0
-  if (urlPath.startsWith("/services") || urlPath.startsWith("/blog") || urlPath.startsWith("/areas/")) return 0.8
+  if (isServiceOrLocation(urlPath)) return 0.8
   return 0.5
 }
 
 function changeFrequencyForPath(urlPath: string): ChangeFrequency {
-  if (urlPath.startsWith("/areas/")) return "daily"
+  if (isServiceOrLocation(urlPath)) return "daily"
   return "monthly"
 }
 
