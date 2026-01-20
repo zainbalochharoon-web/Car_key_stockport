@@ -90,8 +90,27 @@ export default function LocationsSection() {
             Auto Locksmith Services Across <span className="text-orange-400">Greater Manchester</span>
           </h2>
           <p className="text-base sm:text-xl text-gray-300 px-2 sm:px-0">
-            Professional car key replacement, emergency lockout assistance, and van locksmith services available 24/7
-            across Stockport and the wider Greater Manchester area. Wherever you are, we're ready to help.
+            Professional{" "}
+            <Link href="/services/car-key-replacement" className="text-orange-400 hover:text-orange-300 underline">
+              car key replacement
+            </Link>
+            ,{" "}
+            <Link href="/services/lockout-assistance" className="text-orange-400 hover:text-orange-300 underline">
+              emergency lockout assistance
+            </Link>
+            , and{" "}
+            <Link href="/services/van-lockout" className="text-orange-400 hover:text-orange-300 underline">
+              van locksmith services
+            </Link>{" "}
+            available 24/7 across{" "}
+            <Link href="/areas/stockport" className="text-orange-400 hover:text-orange-300 underline">
+              Stockport
+            </Link>{" "}
+            and the wider{" "}
+            <Link href="/areas/manchester" className="text-orange-400 hover:text-orange-300 underline">
+              Greater Manchester area
+            </Link>
+            . Wherever you are, we're ready to help.
           </p>
         </div>
 

@@ -93,9 +93,28 @@ export default function ServicesPage() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-                Fast, professional help for car key replacement, key fob programming, and vehicle lockouts. Average
+                Fast, professional help for{" "}
+                <Link href="/services/car-key-replacement" className="text-orange-400 hover:text-orange-300 underline">
+                  car key replacement
+                </Link>
+                ,{" "}
+                <Link href="/services/key-fob-programming" className="text-orange-400 hover:text-orange-300 underline">
+                  key fob programming
+                </Link>
+                , and{" "}
+                <Link href="/services/lockout-assistance" className="text-orange-400 hover:text-orange-300 underline">
+                  vehicle lockout assistance
+                </Link>
+                . Average
                 <span className="text-orange-400"> 30-minute response</span>. Your trusted "car locksmith near me" across
-                Stockport and Greater Manchester.
+                <Link href="/areas/stockport" className="text-orange-400 hover:text-orange-300 underline">
+                  Stockport
+                </Link>{" "}
+                and{" "}
+                <Link href="/areas/manchester" className="text-orange-400 hover:text-orange-300 underline">
+                  Greater Manchester
+                </Link>
+                .
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">

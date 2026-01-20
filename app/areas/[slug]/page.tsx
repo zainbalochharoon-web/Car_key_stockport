@@ -4,7 +4,7 @@ import Link from "next/link"
 import Script from "next/script"
 import Breadcrumb from "../../components/breadcrumb"
 import { localBusinessSchema, faqSchema } from "@/lib/schema"
-import { areaLocationData } from "@/lib/area-locations"
+import { areaLocationData, areaSlugs } from "@/lib/area-locations"
 import { Phone, Clock, Shield, CheckCircle, MapPin, Star } from "lucide-react"
 
 interface LocationPageProps {
@@ -112,6 +112,26 @@ export default function LocationPage({ params }: LocationPageProps) {
             <p className="text-xl text-gray-300 mb-8">
               {location.heroDescription} Available 24/7 with 25-minute response time across {location.name} and surrounding
               areas.
+            </p>
+
+            <p className="text-gray-300 mb-8">
+              Explore our{" "}
+              <Link href="/services" className="text-orange-400 hover:text-orange-300 underline">
+                car locksmith services
+              </Link>{" "}
+              including{" "}
+              <Link href="/services/car-key-replacement" className="text-orange-400 hover:text-orange-300 underline">
+                car key replacement
+              </Link>
+              ,{" "}
+              <Link href="/services/key-fob-programming" className="text-orange-400 hover:text-orange-300 underline">
+                key fob programming
+              </Link>
+              , and{" "}
+              <Link href="/services/lockout-assistance" className="text-orange-400 hover:text-orange-300 underline">
+                emergency lockout assistance
+              </Link>
+              .
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -256,6 +276,32 @@ export default function LocationPage({ params }: LocationPageProps) {
                 <p className="text-gray-300 text-sm">{item.answer}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Service Areas (Sibling Linking) */}
+      <section className="section-padding bg-slate-800">
+        <div className="container-custom">
+          <h2 className="text-3xl font-bold mb-6 text-center">Nearby Areas We Also Cover</h2>
+          <p className="text-gray-300 text-center mb-10 max-w-3xl mx-auto">
+            If you’re near {location.name}, you may also be looking for an auto locksmith in these nearby areas:
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
+            {areaSlugs
+              .filter((s) => s !== slug)
+              .slice(0, 6)
+              .map((s) => (
+                <Link key={s} href={`/areas/${s}`} className="card p-5 hover:bg-slate-700 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-orange-400">{areaLocationData[s]?.name ?? s}</span>
+                    <span className="text-gray-400 text-sm">View →</span>
+                  </div>
+                  <p className="text-gray-300 text-sm mt-2">
+                    Auto locksmith services including car keys, lockouts, and key programming.
+                  </p>
+                </Link>
+              ))}
           </div>
         </div>
       </section>
