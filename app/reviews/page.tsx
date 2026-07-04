@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Script from "next/script"
 import Link from "next/link"
 import { Star, Phone, CheckCircle, MapPin } from "lucide-react"
-import { reviewSchema, faqSchema, breadcrumbSchema } from "@/lib/schema"
+import { reviewSchema, faqSchema, breadcrumbSchema, webPageSchema } from "@/lib/schema"
 
 export const revalidate = 86400
 
@@ -172,6 +172,26 @@ export default function ReviewsPage() {
               { name: "Home", url: "/" },
               { name: "Reviews", url: "/reviews" },
             ])
+          ),
+        }}
+      />
+      <Script
+        id="reviews-webpage-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            webPageSchema({
+              name: "Reviews — Car Keys Stockport | Vikki Heaton Auto Locksmith",
+              description:
+                "Genuine customer reviews for Car Keys in Stockport. Vikki Heaton has 5-star ratings from customers across Stockport and Greater Manchester.",
+              url: "/reviews",
+              datePublished: "2026-01-01",
+              dateModified: "2026-05-07",
+              breadcrumb: [
+                { name: "Home", url: "/" },
+                { name: "Reviews", url: "/reviews" },
+              ],
+            })
           ),
         }}
       />

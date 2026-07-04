@@ -159,12 +159,40 @@ const faqData = [
 export default function HomePage() {
   return (
     <>
-      {/* Structured Data - LocalBusiness (canonical entity, @id: /#business) */}
+      {/* Structured Data - LocalBusiness with review items (enables Review Snippets in GSC) */}
       <Script
         id="local-business-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema),
+          __html: JSON.stringify({
+            ...organizationSchema,
+            review: [
+              {
+                "@type": "Review",
+                reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                reviewBody:
+                  "Lost my BMW keys on a Saturday night. Vikki was out within 20 minutes and had new keys cut and programmed in under 30 minutes. Absolutely brilliant service — cannot recommend enough.",
+                author: { "@type": "Person", name: "James Wilson" },
+                datePublished: "2025-11-15",
+              },
+              {
+                "@type": "Review",
+                reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                reviewBody:
+                  "Professional service from start to finish. Fair pricing, absolutely no hidden costs, and Vikki was very knowledgeable about my Vauxhall Astra. Highly recommended to anyone in the Cheadle area.",
+                author: { "@type": "Person", name: "Sarah Mitchell" },
+                datePublished: "2025-10-22",
+              },
+              {
+                "@type": "Review",
+                reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                reviewBody:
+                  "Lost all keys to my Audi A3. Vikki handled the all-keys-lost situation without any drama. New key cut and programmed on my driveway. This could have cost me double at a dealer — very happy.",
+                author: { "@type": "Person", name: "Tom Harrison" },
+                datePublished: "2025-07-03",
+              },
+            ],
+          }),
         }}
       />
 
