@@ -57,6 +57,13 @@ export const organizationSchema = {
   priceRange: "££",
   paymentAccepted: "Cash, Credit Card, Debit Card",
   currenciesAccepted: "GBP",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    bestRating: "5",
+    worstRating: "1",
+    reviewCount: 10,
+  },
   sameAs: [
     "https://www.facebook.com/carkeysinstockport",
     "https://www.instagram.com/carkeysinstockport",
@@ -448,3 +455,170 @@ export const webSiteSchema = {
   },
   inLanguage: "en-GB",
 }
+
+// ── Standalone AggregateRating schema ────────────────────────────────────────
+// Use this on hub pages to reinforce the rating signal linked to the business entity
+export const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "@id": "https://carkeysinstockport.co.uk/#aggregate-rating",
+  itemReviewed: {
+    "@type": "LocalBusiness",
+    "@id": "https://carkeysinstockport.co.uk/#business",
+    name: "Car Keys in Stockport",
+  },
+  ratingValue: "5.0",
+  bestRating: "5",
+  worstRating: "1",
+  reviewCount: 10,
+}
+
+// ── ItemList schema generator ─────────────────────────────────────────────────
+// Used on hub pages (cars, services, areas) to tell Google what entities the page lists
+interface ItemListItem {
+  name: string
+  url: string
+  description?: string
+  position: number
+}
+
+export const itemListSchema = (name: string, description: string, items: ItemListItem[]) => ({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name,
+  description,
+  numberOfItems: items.length,
+  itemListElement: items.map((item) => ({
+    "@type": "ListItem",
+    position: item.position,
+    name: item.name,
+    url: `https://carkeysinstockport.co.uk${item.url}`,
+    ...(item.description && { description: item.description }),
+  })),
+})
+
+// ── ContactPage schema ────────────────────────────────────────────────────────
+export const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://carkeysinstockport.co.uk/contact#webpage",
+  name: "Contact Car Keys in Stockport | Get a Free Quote",
+  description:
+    "Contact Vikki Heaton at Car Keys in Stockport for car key replacement, emergency lockout, or key fob programming. Call 07309903243 or use the contact form.",
+  url: "https://carkeysinstockport.co.uk/contact",
+  inLanguage: "en-GB",
+  datePublished: "2026-01-01",
+  dateModified: "2026-05-01",
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": "https://carkeysinstockport.co.uk/#website",
+  },
+  about: {
+    "@type": "LocalBusiness",
+    "@id": "https://carkeysinstockport.co.uk/#business",
+    name: "Car Keys in Stockport",
+    telephone: "+447309903243",
+    email: "info@carkeysinstockport.co.uk",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+447309903243",
+      contactType: "customer service",
+      areaServed: "GB",
+      availableLanguage: "en-GB",
+      hoursAvailable: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        opens: "00:00",
+        closes: "23:59",
+      },
+    },
+  },
+}
+
+// ── ProfilePage schema ────────────────────────────────────────────────────────
+// Signals Vikki Heaton as a named expert entity (E-E-A-T Author identity)
+export const profilePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://carkeysinstockport.co.uk/about#profilepage",
+  name: "About Vikki Heaton — Auto Locksmith & Founder, Car Keys in Stockport",
+  description:
+    "Professional profile of Vikki Heaton, founder and sole auto locksmith at Car Keys in Stockport. 9+ years experience, 2,500+ jobs, fully insured. Based in Stockport, Greater Manchester.",
+  url: "https://carkeysinstockport.co.uk/about",
+  inLanguage: "en-GB",
+  datePublished: "2016-01-01",
+  dateModified: "2026-04-01",
+  mainEntity: {
+    "@type": "Person",
+    "@id": "https://carkeysinstockport.co.uk/about#vikki-heaton",
+    name: "Vikki Heaton",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": "https://carkeysinstockport.co.uk/#website",
+  },
+}
+
+// ── BlogPosting schema generator ──────────────────────────────────────────────
+// Use on blog pages — links article to Vikki's @id and the business @id
+interface ArticleSchemaProps {
+  headline: string
+  description: string
+  url: string
+  datePublished: string  // ISO date — STATIC, not new Date()
+  dateModified: string   // ISO date — STATIC
+  imageUrl?: string
+}
+
+export const articleSchema = ({
+  headline,
+  description,
+  url,
+  datePublished,
+  dateModified,
+  imageUrl = "https://carkeysinstockport.co.uk/images/vikki-heaton-auto-locksmith-stockport.jpg",
+}: ArticleSchemaProps) => ({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": `https://carkeysinstockport.co.uk${url}#article`,
+  headline,
+  description,
+  url: `https://carkeysinstockport.co.uk${url}`,
+  datePublished,
+  dateModified,
+  image: {
+    "@type": "ImageObject",
+    url: imageUrl,
+    width: 1200,
+    height: 630,
+  },
+  author: {
+    "@type": "Person",
+    "@id": "https://carkeysinstockport.co.uk/about#vikki-heaton",
+    name: "Vikki Heaton",
+    url: "https://carkeysinstockport.co.uk/about",
+  },
+  publisher: {
+    "@type": "LocalBusiness",
+    "@id": "https://carkeysinstockport.co.uk/#business",
+    name: "Car Keys in Stockport",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://carkeysinstockport.co.uk/favicon-192.png",
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `https://carkeysinstockport.co.uk${url}#webpage`,
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": "https://carkeysinstockport.co.uk/#website",
+  },
+  about: {
+    "@type": "LocalBusiness",
+    "@id": "https://carkeysinstockport.co.uk/#business",
+  },
+  inLanguage: "en-GB",
+  articleSection: "Auto Locksmith Services",
+})

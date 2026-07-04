@@ -1,15 +1,67 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import { Phone, Mail, MapPin, Clock, Users, MessageCircle, Calendar } from "lucide-react"
 import ContactForm from "./contact-form"
+import { contactPageSchema, webPageSchema, breadcrumbSchema } from "@/lib/schema"
 
 export const metadata: Metadata = {
-  title: "Contact Us - Car Keys Stockport | Get Free Quote",
+  title: "Contact Car Keys in Stockport | Free Quote | 07309903243",
   description:
-    "Contact Car Keys Stockport for fast car key replacement, programming and lockout assistance. Call +44 7936 755530 or get a free quote online.",
+    "Contact Vikki Heaton at Car Keys in Stockport. Call 07309903243 for an instant quote on car key replacement, emergency lockout, or key fob programming. No call-out fee.",
+  alternates: {
+    canonical: "https://carkeysinstockport.co.uk/contact",
+  },
+  openGraph: {
+    title: "Contact Car Keys in Stockport | Free Quote",
+    description:
+      "Call Vikki Heaton at 07309903243 for car key replacement, emergency lockout, or key fob programming in Stockport. No call-out fee.",
+    url: "https://carkeysinstockport.co.uk/contact",
+    type: "website",
+    siteName: "Car Keys in Stockport",
+    locale: "en_GB",
+  },
 }
 
 export default function ContactPage() {
   return (
+    <>
+      <Script
+        id="contact-page-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+      <Script
+        id="contact-webpage-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            webPageSchema({
+              name: "Contact Car Keys in Stockport | Free Quote | 07309903243",
+              description:
+                "Contact Vikki Heaton at Car Keys in Stockport. Call 07309903243 for an instant quote on car key replacement, emergency lockout, or key fob programming.",
+              url: "/contact",
+              datePublished: "2026-01-01",
+              dateModified: "2026-05-01",
+              breadcrumb: [
+                { name: "Home", url: "/" },
+                { name: "Contact", url: "/contact" },
+              ],
+            })
+          ),
+        }}
+      />
+      <Script
+        id="contact-breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: "Home", url: "/" },
+              { name: "Contact", url: "/contact" },
+            ])
+          ),
+        }}
+      />
     <main className="bg-slate-900 text-white pt-20">
       <div className="container-custom section-padding">
         <div className="text-center mb-16">
@@ -244,5 +296,6 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

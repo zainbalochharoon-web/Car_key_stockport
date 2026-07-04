@@ -3,7 +3,7 @@ import Script from "next/script"
 import Image from "next/image"
 import Link from "next/link"
 import { Phone, MapPin, Clock, Star } from "lucide-react"
-import { breadcrumbSchema, webPageSchema } from "@/lib/schema"
+import { breadcrumbSchema, webPageSchema, itemListSchema } from "@/lib/schema"
 
 export const revalidate = 86400
 
@@ -79,6 +79,29 @@ const subLocations = [
   { name: "Salford", slug: "salford" },
 ]
 
+const stockportSubAreaSlugs = [
+  { name: "Hazel Grove", slug: "hazel-grove" },
+  { name: "Bramhall", slug: "bramhall" },
+  { name: "Cheadle", slug: "cheadle" },
+  { name: "Marple", slug: "marple" },
+  { name: "Romiley", slug: "romiley" },
+  { name: "Bredbury", slug: "bredbury" },
+  { name: "Reddish", slug: "reddish" },
+  { name: "Edgeley", slug: "edgeley" },
+  { name: "Offerton", slug: "offerton" },
+  { name: "Davenport", slug: "davenport" },
+  { name: "Gatley", slug: "gatley" },
+  { name: "Heaton Mersey", slug: "heaton-mersey" },
+  { name: "Heaton Moor", slug: "heaton-moor" },
+  { name: "High Lane", slug: "high-lane" },
+  { name: "Portwood", slug: "portwood" },
+  { name: "Woodsmoor", slug: "woodsmoor" },
+  { name: "Stepping Hill", slug: "stepping-hill" },
+  { name: "Adswood", slug: "adswood" },
+  { name: "Brinnington", slug: "brinnington" },
+  { name: "Denton", slug: "denton" },
+]
+
 export default function StockportAreaPage() {
   return (
     <>
@@ -86,6 +109,24 @@ export default function StockportAreaPage() {
         id="stockport-localbusiness-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(stockportLocalBusinessSchema) }}
+      />
+      <Script
+        id="stockport-subareas-itemlist-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            itemListSchema(
+              "Auto Locksmith Service Areas in Stockport",
+              "Car Keys in Stockport provides mobile auto locksmith services across all Stockport sub-areas. Find your area below.",
+              stockportSubAreaSlugs.map((area, index) => ({
+                position: index + 1,
+                name: `Auto Locksmith in ${area.name}`,
+                url: `/areas/stockport/${area.slug}`,
+                description: `Mobile car key replacement and emergency lockout service in ${area.name}. 25-minute response. 24/7.`,
+              }))
+            )
+          ),
+        }}
       />
       <Script
         id="stockport-webpage-schema"

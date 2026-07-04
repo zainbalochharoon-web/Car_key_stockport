@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
+import Script from "next/script"
 import { ArrowRight, Clock, Shield, CheckCircle, Star, Award, Zap, PenTool, Phone } from "lucide-react"
+import { webPageSchema, breadcrumbSchema } from "@/lib/schema"
 
 export const metadata: Metadata = {
   title: "Car Locksmith Services Stockport | Auto Locksmith Near Me | Professional Mobile Service",
@@ -76,6 +78,39 @@ export default function ServicesPage() {
   ]
 
   return (
+    <>
+      <Script
+        id="services-webpage-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            webPageSchema({
+              name: "Car Locksmith Services Stockport | Auto Locksmith Near Me",
+              description:
+                "Professional car locksmith services in Stockport — car key replacement, key fob programming, emergency lockout, ignition repair. 24/7 mobile service. No call-out fee.",
+              url: "/services",
+              datePublished: "2026-01-01",
+              dateModified: "2026-04-15",
+              breadcrumb: [
+                { name: "Home", url: "/" },
+                { name: "Services", url: "/services" },
+              ],
+            })
+          ),
+        }}
+      />
+      <Script
+        id="services-breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: "Home", url: "/" },
+              { name: "Services", url: "/services" },
+            ])
+          ),
+        }}
+      />
     <main className="bg-slate-900 text-white pt-20">
       {/* Header / Hero */}
       <section className="section-padding pt-20 sm:pt-24 md:pt-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
@@ -512,33 +547,40 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Structured Data */}
-      <script
+      <Script
+        id="services-itemlist-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
+            name: "Auto Locksmith Services — Car Keys in Stockport",
+            numberOfItems: services.length,
             itemListElement: services.map((service, index) => ({
               "@type": "ListItem",
               position: index + 1,
+              name: service.title,
+              url: `https://carkeysinstockport.co.uk/services/${service.slug}`,
               item: {
                 "@type": "Service",
                 name: service.title,
                 description: service.description,
                 provider: {
-                  "@type": "AutomotiveBusiness",
-                  name: "Car Keys Stockport",
+                  "@type": "LocalBusiness",
+                  "@id": "https://carkeysinstockport.co.uk/#business",
+                  name: "Car Keys in Stockport",
                 },
                 areaServed: {
                   "@type": "City",
                   name: "Stockport",
                 },
+                url: `https://carkeysinstockport.co.uk/services/${service.slug}`,
               },
             })),
           }),
         }}
       />
     </main>
+    </>
   )
 }

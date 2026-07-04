@@ -75,6 +75,33 @@ export const metadata: Metadata = {
 }
 
 // ── Schema helpers ─────────────────────────────────────────────────────────
+const carItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://carkeysinstockport.co.uk/cars#itemlist",
+  name: "Car Key Replacement by Make & Model — Stockport Auto Locksmith",
+  description:
+    "Same-day car key replacement in Stockport for all major vehicle brands. Find your make below.",
+  numberOfItems: carBrandsData.length,
+  itemListElement: carBrandsData.map((brand, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: `${brand.brand} Car Key Replacement — Stockport`,
+    url: `https://carkeysinstockport.co.uk/cars/${brand.slug}`,
+    item: {
+      "@type": "Service",
+      name: `${brand.brand} Car Key Replacement Stockport`,
+      provider: {
+        "@type": "LocalBusiness",
+        "@id": "https://carkeysinstockport.co.uk/#business",
+        name: "Car Keys in Stockport",
+      },
+      areaServed: { "@type": "City", name: "Stockport" },
+      url: `https://carkeysinstockport.co.uk/cars/${brand.slug}`,
+    },
+  })),
+}
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -217,6 +244,11 @@ export default function CarsIndexPage() {
   return (
     <>
       {/* Schemas */}
+      <Script
+        id="cars-itemlist-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(carItemListSchema) }}
+      />
       <Script
         id="cars-breadcrumb-schema"
         type="application/ld+json"

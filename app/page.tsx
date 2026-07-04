@@ -29,7 +29,15 @@ import {
   Settings,
 } from "lucide-react"
 import type { Metadata } from "next"
-import { faqSchema } from "@/lib/schema"
+import {
+  faqSchema,
+  organizationSchema,
+  webSiteSchema,
+  vikkiHeatonPersonSchema,
+  webPageSchema as libWebPageSchema,
+  howToSchema,
+  aggregateRatingSchema,
+} from "@/lib/schema"
 
 export const revalidate = 86400
 
@@ -148,198 +156,59 @@ const faqData = [
   },
 ]
 
-// Enhanced LocalBusiness Schema with all details
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://carkeysinstockport.co.uk#business",
-  name: "CK Stockport",
-  alternateName: "Car Keys Stockport",
-  image: "https://carkeysinstockport.co.uk/images/auto-locksmith-hero.jpg",
-  description:
-    "Professional 24/7 auto locksmith services in Stockport and Greater Manchester. Specializing in car key replacement, key fob programming, emergency lockout assistance, van locksmith services, and ignition repair. 25-minute average response time. Fully insured. No call-out fee.",
-  url: "https://carkeysinstockport.co.uk",
-  telephone: "+447309903243",
-  email: "info@carkeysinstockport.co.uk",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Stockport",
-    addressLocality: "Stockport",
-    addressRegion: "Greater Manchester",
-    postalCode: "SK1",
-    addressCountry: "GB",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 53.4106,
-    longitude: -2.1575,
-  },
-  areaServed: [
-    {
-      "@type": "City",
-      name: "Stockport",
-      containsPlace: [
-        { "@type": "City", name: "Cheadle" },
-        { "@type": "City", name: "Bramhall" },
-        { "@type": "City", name: "Hazel Grove" },
-      ],
-    },
-    { "@type": "City", name: "Manchester" },
-    { "@type": "City", name: "Bury" },
-    { "@type": "City", name: "Oldham" },
-    { "@type": "City", name: "Rochdale" },
-    { "@type": "City", name: "Tameside" },
-    { "@type": "City", name: "Trafford" },
-    { "@type": "City", name: "Salford" },
-  ],
-  priceRange: "££",
-  paymentAccepted: "Cash, Credit Card, Debit Card",
-  currenciesAccepted: "GBP",
-  review: [
-    {
-      "@type": "Review",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5",
-      },
-      author: {
-        "@type": "Person",
-        name: "Sarah M.",
-      },
-      reviewBody:
-        "CK Stockport saved me when I locked my keys in my car. They arrived in 20 minutes and got me back in without any damage. Professional, fast, and reasonably priced. Highly recommend!",
-    },
-  ],
-  sameAs: [
-    "https://www.facebook.com/carkeysinstockport",
-    "https://www.instagram.com/carkeysinstockport",
-  ],
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    opens: "00:00",
-    closes: "23:59",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Auto Locksmith Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Car Key Replacement",
-          description:
-            "Professional car key cutting and programming for all vehicle makes and models. Transponder keys, remote key fobs, and smart keys.",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Emergency Lockout Assistance",
-          description:
-            "Fast, damage-free car lockout entry service available 24/7. Non-destructive entry techniques.",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Key Fob Programming",
-          description:
-            "Remote key fob programming and transponder key coding for all vehicle types.",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Van Locksmith Services",
-          description:
-            "Commercial and personal van lockout assistance, key replacement, and programming.",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Ignition Repair",
-          description:
-            "Ignition switch repair and replacement service for all vehicle makes.",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Emergency Service",
-          description:
-            "24/7 emergency automotive locksmith service across Greater Manchester.",
-        },
-      },
-    ],
-  },
-}
-
-// Service Schema
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  serviceType: "Auto Locksmith Service",
-  provider: {
-    "@type": "LocalBusiness",
-    name: "CK Stockport",
-    telephone: "+447309903243",
-  },
-  areaServed: {
-    "@type": "GeoCircle",
-    geoMidpoint: {
-      "@type": "GeoCoordinates",
-      latitude: 53.4106,
-      longitude: -2.1575,
-    },
-    geoRadius: {
-      "@type": "Distance",
-      value: "50",
-      unitCode: "KIL",
-    },
-  },
-  availableChannel: {
-    "@type": "ServiceChannel",
-    serviceUrl: "https://carkeysinstockport.co.uk/contact",
-    servicePhone: "+447309903243",
-    availableLanguage: "en-GB",
-  },
-}
-
 export default function HomePage() {
   return (
     <>
-      {/* Structured Data - LocalBusiness */}
+      {/* Structured Data - LocalBusiness (canonical entity, @id: /#business) */}
       <Script
         id="local-business-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(localBusinessSchema),
+          __html: JSON.stringify(organizationSchema),
         }}
       />
 
-      {/* Structured Data - Service */}
+      {/* Structured Data - WebSite (enables Sitelinks Search Box) */}
+      <Script
+        id="website-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webSiteSchema),
+        }}
+      />
+
+      {/* Structured Data - Service with GeoCircle areaServed */}
       <Script
         id="service-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema),
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "@id": "https://carkeysinstockport.co.uk/#service",
+            serviceType: "Auto Locksmith Service",
+            provider: {
+              "@type": "LocalBusiness",
+              "@id": "https://carkeysinstockport.co.uk/#business",
+              name: "Car Keys in Stockport",
+              telephone: "+447309903243",
+            },
+            areaServed: {
+              "@type": "GeoCircle",
+              geoMidpoint: {
+                "@type": "GeoCoordinates",
+                latitude: 53.4106,
+                longitude: -2.1575,
+              },
+              geoRadius: "50000",
+            },
+            availableChannel: {
+              "@type": "ServiceChannel",
+              serviceUrl: "https://carkeysinstockport.co.uk/contact",
+              servicePhone: "+447309903243",
+              availableLanguage: "en-GB",
+            },
+          }),
         }}
       />
 
@@ -352,76 +221,76 @@ export default function HomePage() {
         }}
       />
 
-      {/* Structured Data - Person (Vikki Heaton E-E-A-T) */}
+      {/* Structured Data - Person (Vikki Heaton — canonical @id linked) */}
       <Script
         id="person-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Vikki Heaton",
-            jobTitle: "Auto Locksmith & Business Owner",
-            gender: "Female",
-            description:
-              "Vikki Heaton is a female-owned auto locksmith specialist based in Stockport, Greater Manchester. Founder of Car Keys Stockport, providing car key replacement, van lockout, key fob programming and emergency locksmith services since 2016. Trusted by 2,500+ customers across Stockport and Greater Manchester.",
-            telephone: "+447309903243",
-            email: "info@carkeysinstockport.co.uk",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Stockport",
-              addressRegion: "Greater Manchester",
-              addressCountry: "GB",
-            },
-            url: "https://carkeysinstockport.co.uk",
-            image: {
-              "@type": "ImageObject",
-              url: "https://carkeysinstockport.co.uk/images/vikki-heaton-auto-locksmith-stockport.jpg",
-              width: 600,
-              height: 700,
-              caption:
-                "Vikki Heaton — Professional Female Auto Locksmith in Stockport, Greater Manchester",
-            },
-            sameAs: [
-              "https://carkeysinstockport.co.uk/about",
-              "https://www.facebook.com/vikki.heaton.5",
-            ],
-            knowsAbout: [
-              "Auto Locksmith",
-              "Car Key Replacement",
-              "Van Lockout",
-              "Key Fob Programming",
-              "Ignition Repair",
-              "Emergency Locksmith",
-              "Transponder Key Programming",
-              "Smart Key Programming",
-            ],
-            hasOccupation: {
-              "@type": "Occupation",
-              name: "Auto Locksmith",
-              occupationLocation: {
-                "@type": "City",
-                name: "Stockport",
-              },
-              estimatedSalary: [],
+          __html: JSON.stringify(vikkiHeatonPersonSchema),
+        }}
+      />
+
+      {/* Structured Data - AggregateRating (star ratings in SERP) */}
+      <Script
+        id="aggregate-rating-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aggregateRatingSchema),
+        }}
+      />
+
+      {/* Structured Data - WebPage */}
+      <Script
+        id="homepage-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            libWebPageSchema({
+              name: "Car Locksmith Stockport | Vikki Heaton – 25-Min Response, No Call-Out Fee",
               description:
-                "Professional automotive locksmith specialising in car key replacement, van lockout assistance, key fob programming and 24/7 emergency locksmith services across Stockport and Greater Manchester.",
-            },
-            worksFor: {
-              "@type": "LocalBusiness",
-              name: "Car Keys Stockport",
-              url: "https://carkeysinstockport.co.uk",
-              telephone: "+447309903243",
-              image: {
-                "@type": "ImageObject",
-                url: "https://carkeysinstockport.co.uk/images/vikki-heaton-auto-locksmith-stockport.jpg",
-                width: 600,
-                height: 700,
-                caption:
-                  "Vikki Heaton — Professional Female Auto Locksmith in Stockport, Greater Manchester",
-              },
-            },
-          }),
+                "Lost car keys or locked out in Stockport? Vikki Heaton — trusted female auto locksmith since 2016 — arrives in 25 minutes. 24/7, fully insured, no call-out fee. Call 07309903243.",
+              url: "/",
+              datePublished: "2016-01-01",
+              dateModified: "2026-05-01",
+              breadcrumb: [{ name: "Home", url: "/" }],
+            })
+          ),
+        }}
+      />
+
+      {/* Structured Data - HowTo (4-step service process) */}
+      <Script
+        id="howto-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            howToSchema(
+              "How Our Auto Locksmith Service Works",
+              "Car Keys in Stockport provides a simple 4-step process for car key replacement and emergency lockout assistance across Stockport and Greater Manchester.",
+              [
+                {
+                  position: 1,
+                  name: "Call Car Keys in Stockport",
+                  text: "Contact Vikki Heaton at 07309903243 or request a free quote online. She will gather details about your vehicle and situation and give you a fixed upfront price with no call-out fee.",
+                },
+                {
+                  position: 2,
+                  name: "Fast 25-Minute Response",
+                  text: "Vikki arrives at your location within 25 minutes on average. Fully mobile service across Stockport and Greater Manchester, available 24/7 including weekends and bank holidays.",
+                },
+                {
+                  position: 3,
+                  name: "Professional On-Site Service",
+                  text: "Vikki assesses your vehicle, confirms the fixed price, and completes the work using professional-grade key cutting and programming equipment on-site — no towing required.",
+                },
+                {
+                  position: 4,
+                  name: "Job Complete — Keys Tested",
+                  text: "Your car keys are replaced, programmed, or your lockout resolved. Every key is tested to start the vehicle and operate all locks before Vikki leaves.",
+                },
+              ]
+            )
+          ),
         }}
       />
 

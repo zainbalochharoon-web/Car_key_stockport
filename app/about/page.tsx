@@ -3,7 +3,7 @@ import Script from "next/script"
 import Image from "next/image"
 import { Shield, Clock, Award, Users, CheckCircle, Phone, MapPin, Star, Trophy, Heart, Zap } from "lucide-react"
 import Link from "next/link"
-import { vikkiHeatonPersonSchema, breadcrumbSchema, webPageSchema } from "@/lib/schema"
+import { vikkiHeatonPersonSchema, breadcrumbSchema, webPageSchema, profilePageSchema } from "@/lib/schema"
 
 export const revalidate = 86400
 
@@ -62,6 +62,11 @@ export default function AboutPage() {
             ])
           ),
         }}
+      />
+      <Script
+        id="about-profilepage-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
       />
       <main className="bg-slate-900 text-white pt-20">
       {/* Hero Section */}

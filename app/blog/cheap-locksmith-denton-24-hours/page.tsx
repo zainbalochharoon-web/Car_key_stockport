@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import Script from "next/script"
+import { articleSchema, webPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema"
 
 export const metadata: Metadata = {
   title: "Cheap Locksmith Denton 24 Hours | Auto, Car & Van | Car Keys Stockport",
@@ -37,56 +38,57 @@ export default function CheapLocksmithDenton24HoursPage() {
         id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            headline: "Cheap Locksmith Denton 24 Hours — Auto, Car & Van Services",
-            description:
-              "Need a cheap 24 hour locksmith in Denton? Fast auto, car & van locksmith in Denton SK14 day or night. Mobile service. No call-out fee.",
-            url: "https://carkeysinstockport.co.uk/blog/cheap-locksmith-denton-24-hours",
-            datePublished: "2024-01-15",
-            dateModified: "2024-06-01",
-            author: {
-              "@type": "Person",
-              name: "Vikki Heaton",
-              url: "https://carkeysinstockport.co.uk/about",
-              sameAs: [
-                "https://www.facebook.com/vikki.heaton.5",
-                "https://carkeysinstockport.co.uk/about",
-              ],
-            },
-            publisher: {
-              "@type": "LocalBusiness",
-              name: "Car Keys Stockport",
-              url: "https://carkeysinstockport.co.uk",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://carkeysinstockport.co.uk/favicon-192.png",
-              },
-            },
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": "https://carkeysinstockport.co.uk/blog/cheap-locksmith-denton-24-hours",
-            },
-          }),
+          __html: JSON.stringify(
+            articleSchema({
+              headline: "Cheap Locksmith Denton 24 Hours — Auto, Car & Van Services",
+              description:
+                "Need a cheap 24 hour locksmith in Denton? Fast auto, car & van locksmith in Denton SK14 day or night. Mobile service. No call-out fee.",
+              url: "/blog/cheap-locksmith-denton-24-hours",
+              datePublished: "2024-01-15",
+              dateModified: "2024-06-01",
+            })
+          ),
         }}
       />
       <Script
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqItems.map((item) => ({
-              "@type": "Question",
-              name: item.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: item.answer,
-              },
-            })),
-          }),
+          __html: JSON.stringify(faqSchema(faqItems)),
+        }}
+      />
+      <Script
+        id="blog-webpage-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            webPageSchema({
+              name: "Cheap Locksmith Denton 24 Hours | Auto, Car & Van | Car Keys Stockport",
+              description:
+                "Need a cheap 24 hour locksmith in Denton? Fast auto, car & van locksmith in Denton SK14 day or night. Mobile service. No call-out fee.",
+              url: "/blog/cheap-locksmith-denton-24-hours",
+              datePublished: "2024-01-15",
+              dateModified: "2024-06-01",
+              breadcrumb: [
+                { name: "Home", url: "/" },
+                { name: "Blog", url: "/blog" },
+                { name: "Cheap Locksmith Denton 24 Hours", url: "/blog/cheap-locksmith-denton-24-hours" },
+              ],
+            })
+          ),
+        }}
+      />
+      <Script
+        id="blog-breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: "Home", url: "/" },
+              { name: "Blog", url: "/blog" },
+              { name: "Cheap Locksmith Denton 24 Hours", url: "/blog/cheap-locksmith-denton-24-hours" },
+            ])
+          ),
         }}
       />
 
